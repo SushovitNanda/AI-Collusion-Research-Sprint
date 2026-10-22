@@ -1,0 +1,24 @@
+models: ['zai-org/GLM-5.3']
+reasoning.enabled=false: content='```json\n' reasoning_len=1138 out_tokens=300
+chat_template_kwargs.enable_thinking=false: content='' reasoning_len=1254 out_tokens=300
+chat_template_kwargs.thinking=false: content='' reasoning_len=1175 out_tokens=300
+thinking.type=disabled: content='' reasoning_len=1184 out_tokens=300
+Traceback (most recent call last):
+  File "C:\Users\SUSHOVIT\AppData\Local\Temp\claude\c--Users-SUSHOVIT-OneDrive-Desktop-collusion-dial\b54b1739-cf74-46a5-9d5f-eaff6fec2c02\scratchpad\probe2.py", line 1, in <module>
+    import os, httpx
+ModuleNotFoundError: No module named 'httpx'
+/version ERR name 'httpx' is not defined
+/v1/models ERR name 'httpx' is not defined
+/server_info ERR name 'httpx' is not defined
+/get_server_info ERR name 'httpx' is not defined
+/health ERR name 'httpx' is not defined
+reasoning_effort=none: content='' reasoning_len=1258 out_tokens=300
+reasoning.effort=none: content='' reasoning_len=1195 out_tokens=300
+ctk enable_thinking+thinking false: content='```json\n{"x": 2}\n```' reasoning_len=178 out_tokens=68
+separate_reasoning=false: content='The user is asking me to reply with JSON `{"x": 1+1}`. They want me to evaluate ' reasoning_len=0 out_tokens=72
+/nothink suffix: content='{"x": 2}' reasoning_len=924 out_tokens=248
+reasoning.enabled=false (current): valid=0/4  reasoning_chars=[1758, 1736, 1681, 1934]  out_tokens=[400, 400, 400, 400]
+ctk enable_thinking=false: valid=0/4  reasoning_chars=[1663, 1848, 1557, 1712]  out_tokens=[400, 400, 400, 400]
+ctk enable_thinking+thinking=false: valid=0/4  reasoning_chars=[1888, 1771, 1866, 1622]  out_tokens=[400, 400, 400, 400]
+--- token need with max_tokens=6000 ---
+reasoning.enabled=false, max_tokens=6000: valid=6/6  reasoning_chars=[8271, 4392, 14342, 17814, 8312, 17946]  out_tokens=[2319, 1221, 4182, 4665, 2138, 5953]

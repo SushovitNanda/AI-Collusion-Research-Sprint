@@ -1,0 +1,18 @@
+=== 1-round live run: dial_channel, lam=0.5, seed=1, 3 firms, agents=glm (2026-10-23T02:22:08+05:30) ===
+wrote logs\poc_1round\glm__dial_channel__lam0.5__n3__s1
+{
+  "glm": {
+    "calls": 8,
+    "input_tokens": 4417,
+    "output_tokens": 13355,
+    "parse_failures": 0,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "_total_tokens": 17772
+}
+
+real	0m54.429s
+user	0m0.000s
+sys	0m0.015s
+exit=0

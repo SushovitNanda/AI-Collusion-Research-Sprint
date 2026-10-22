@@ -1,0 +1,61 @@
+# Model endpoints. Every entry is an OpenAI-compatible chat endpoint.
+# auth: "modal" builds the key from MODAL_PROXY_TOKEN_ID / MODAL_PROXY_TOKEN_SECRET.
+#       Anything else: set api_key_env to the environment variable holding the key.
+#
+# Prices are USD per 1M tokens. Fill them in from your Modal billing page so the
+# usage tracker can estimate spend. Leave null if unknown.
+
+models:
+  # Main agent model. Reasoning OFF: thinking tokens would multiply cost and the
+  # game already has an explicit private-planning stage.
+  glm:
+    model: zai-org/GLM-5.3
+    base_url: https://sushovit-nanda--ep-apart-server.us-west.modal.direct/v1
+    auth: modal
+    temperature: 0.7
+    top_p: 0.9
+    extra_body: {reasoning: {enabled: false}}
+    # The current deployment ignores every "thinking off" flag (reasoning.enabled,
+    # chat_template_kwargs.enable_thinking, thinking.type, reasoning_effort) and
+    # always reasons first: 1.2k-6k output tokens per call in testing. With a
+    # multiplier of 1 the JSON never arrives. Drop back to 1 once thinking can be
+    # disabled server-side (e.g. default enable_thinking=false in the chat template).
+    max_tokens_multiplier: 20
+    price_per_m_input: null
+    price_per_m_output: null
+
+  # Same model with native reasoning ON (small subsets only: compare its real
+  # reasoning trace with the plan it writes).
+  glm_reason:
+    model: zai-org/GLM-5.3
+    base_url: https://sushovit-nanda--ep-apart-server.us-west.modal.direct/v1
+    auth: modal
+    temperature: 0.7
+    top_p: 0.9
+    extra_body: {reasoning: {enabled: true}}
+    max_tokens_multiplier: 8
+    price_per_m_input: null
+    price_per_m_output: null
+
+  # Monitor / judge model: a different family from the agents, so the monitor
+  # is not judging its own kind. Low reasoning effort keeps cost down.
+  qwen:
+    model: Qwen/Qwen3.8-2.4T-A95B
+    base_url: https://sushovit-nanda--ep-apart2-server.us-west.modal.direct/v1
+    auth: modal
+    temperature: 0.3
+    top_p: 0.95
+    extra_body: {reasoning_effort: low}
+    max_tokens_multiplier: 4
+    price_per_m_input: null
+    price_per_m_output: null
+
+  # Offline stand-in that follows a scripted policy. Use it to test the whole
+  # pipeline without spending credits. Its results are synthetic.
+  mock:
+    mock: true
+
+# Hard stop: the run aborts once this many tokens (input + output, all models)
+# have been used in one process.
+budget:
+  max_total_tokens: 4000000
