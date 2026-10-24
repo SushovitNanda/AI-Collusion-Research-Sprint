@@ -15,20 +15,12 @@ pilot2_logs/
 pilot3_logs/
 eval_logs/
 
-# planning documents, templates and build artefacts not part of the submission
+# not part of the repository: the report (added separately as a PDF), planning
+# documents and the pilot log
+Report/
 docs/
-Report/*.docx
-Report/*.aux
-Report/*.bbl
-Report/*.blg
-Report/*.log
-Report/*.out
-Report/*.synctex.gz
-Report/*.fls
-Report/*.fdb_latexmk
 
 # derived copies that the scripts rebuild (see results/README.md)
 results/*/runs/eval_pooled/
 results/*/runs/panel_all/
-results/*/runs/*/smoke/
 results/*/analysis/interim_*/

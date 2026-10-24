@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Full end-to-end run (v0.3 configuration, validated in pilots 1-3; see pilot_run.md).
+# Full end-to-end run (v0.3 configuration, validated in pilots 1-3; see README, 'Pilot history').
 # Order matters: the evaluation set freezes thresholds and the hybrid before any dial run is scored.
 set -euo pipefail
 AGENT=${AGENT:-qwen}

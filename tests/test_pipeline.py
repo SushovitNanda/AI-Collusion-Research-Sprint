@@ -435,3 +435,16 @@ def test_ownership_mention_rate_reported(mock):
     own = mock["summary"]["ownership_mention_rate"]
     assert {o["case_type"] for o in own} == set(EVAL_CASES)
     assert all("ownership_mention_say" in o and "ownership_mention_notes" in o for o in own)
+
+
+def test_base_url_from_env(monkeypatch):
+    """Private endpoint URLs come from the environment, not from the repo."""
+    import pytest
+    from collusion_dial.llm import _base_url
+    monkeypatch.setenv("X_TEST_URL", "https://example.test/v1")
+    assert _base_url({"base_url_env": "X_TEST_URL"}) == "https://example.test/v1"
+    assert _base_url({"base_url": "${X_TEST_URL}/sub"}) == "https://example.test/v1/sub"
+    assert _base_url({"base_url": "https://openrouter.ai/api/v1"}) == "https://openrouter.ai/api/v1"
+    monkeypatch.delenv("X_TEST_URL")
+    with pytest.raises(RuntimeError):
+        _base_url({"base_url_env": "X_TEST_URL"})

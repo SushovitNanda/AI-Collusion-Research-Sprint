@@ -1,36 +1,42 @@
 # Model endpoints. Every entry is an OpenAI-compatible chat endpoint.
 #
-#   auth: modal       key = $<token_prefix>PROXY_TOKEN_ID.$<token_prefix>PROXY_TOKEN_SECRET
-#                     (token_prefix defaults to MODAL_; a second Modal workspace with the
-#                     same deployments can be addressed by changing base_url and
-#                     token_prefix, e.g. MODAL3_ -> MODAL3_PROXY_TOKEN_ID / _SECRET)
-#   auth: openrouter  key = the environment variable named by api_key_env
+# Fields
+#   model                 model id sent in the request
+#   base_url_env          name of the environment variable holding the endpoint URL
+#                         (private deployments stay out of the repo); or
+#   base_url              a literal URL, which may contain ${VAR} placeholders
+#   auth: modal           key = $<token_prefix>PROXY_TOKEN_ID . $<token_prefix>PROXY_TOKEN_SECRET
+#                         (token_prefix defaults to MODAL_)
+#   auth: openrouter      key = the environment variable named by api_key_env
+#   temperature, top_p    sampling
+#   extra_body            provider-specific request fields (reasoning switches)
+#   max_tokens_multiplier the per-call token budget is max_tokens x this; a reply that is
+#                         empty because reasoning used the budget is retried with
+#                         retry_tokens_growth (default 2) x the budget, up to max_tokens_cap
+#   timeout               seconds per call
+#   price_per_m_*         USD per 1M tokens, only for the usage estimate (null = unknown)
 #
-# Prices are USD per 1M tokens and only feed the usage estimate (null = unknown).
-# Roles in the reported runs: qwen = agents, glm = judge for the five views,
-# qwen = claims extractor (the reasoning judge takes minutes per batch), the
-# or_* entries = agent families of the model panel, judged by glm.
-#
-# Provenance of the reported runs: results/main used one Modal workspace for
-# everything; results/extended ran its agents on a second workspace with
-# identical deployments (judging stayed on the first); results/model_panel ran
-# its agents on OpenRouter and its judge/extractor on the second workspace.
+# Roles in the reported runs: qwen = agents and claims extractor, glm = judge for
+# the five views, or_* = agent families of the model panel (judged by glm).
+# To run two Modal workspaces in one process (e.g. agents on one, judge on the
+# other), duplicate an entry with token_prefix: MODAL3_ and base_url_env:
+# MODAL3_QWEN_BASE_URL and set the matching variables in .env.
 
 models:
-  # ---- Modal deployments (set base_url to your own) ----
+  # ---- Modal deployments (URLs and tokens from .env) ----
   glm:
     model: zai-org/GLM-5.3
-    base_url: https://aady-nanda-0301--ep-glm-5-3-server.us-west.modal.direct/v1
+    base_url_env: MODAL_GLM_BASE_URL
     auth: modal
     token_prefix: MODAL_
     temperature: 0.7
     top_p: 0.9
     extra_body: {reasoning: {enabled: false}}
-    # This deployment ignores every "thinking off" flag (reasoning.enabled,
-    # chat_template_kwargs.enable_thinking, thinking.type, reasoning_effort) and
-    # always reasons first (1.2k-6k output tokens per call). The multiplier makes
-    # room for that; with 1 the JSON never arrives. Drop back to 1 once thinking
-    # can be disabled server-side.
+    # The deployment used for the reported runs ignores every "thinking off" flag
+    # (reasoning.enabled, chat_template_kwargs.enable_thinking, thinking.type,
+    # reasoning_effort) and always reasons first (1.2k-6k output tokens per call).
+    # The multiplier makes room for that; with 1 the JSON never arrives. Drop
+    # back to 1 once thinking can be disabled server-side.
     max_tokens_multiplier: 20
     max_tokens_cap: 32000
     timeout: 600          # judge and extraction calls reason for minutes
@@ -39,7 +45,7 @@ models:
 
   glm_reason:           # same model with native reasoning requested (small subsets only)
     model: zai-org/GLM-5.3
-    base_url: https://aady-nanda-0301--ep-glm-5-3-server.us-west.modal.direct/v1
+    base_url_env: MODAL_GLM_BASE_URL
     auth: modal
     token_prefix: MODAL_
     temperature: 0.7
@@ -51,7 +57,7 @@ models:
 
   qwen:                 # agents of the main runs; also the claims extractor
     model: Qwen/Qwen3.8-2.4T-A95B
-    base_url: https://aady-nanda-0301--ep-apart-server.us-west.modal.direct/v1
+    base_url_env: MODAL_QWEN_BASE_URL
     auth: modal
     token_prefix: MODAL_
     temperature: 0.3

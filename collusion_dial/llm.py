@@ -88,6 +88,29 @@ def _valid(data, schema) -> bool:
     return isinstance(data, dict) and all(k in data for k in schema.get("required", []))
 
 
+def _base_url(cfg) -> str:
+    """Endpoint URL of a model entry. `base_url_env` names the environment variable
+    that holds it (private deployments stay out of the repo); a literal `base_url`
+    may also contain ${VAR} placeholders."""
+    env = cfg.get("base_url_env")
+    if env:
+        url = os.environ.get(env, "").strip()
+        if not url:
+            raise RuntimeError(f"Set the environment variable {env} to the endpoint's base URL "
+                               "(see .env.example)")
+        return url
+    url = cfg.get("base_url")
+    if not url:
+        raise RuntimeError("a model entry needs base_url or base_url_env")
+
+    def sub(m):
+        name = m.group(1)
+        if name not in os.environ:
+            raise RuntimeError(f"Set the environment variable {name} used in base_url")
+        return os.environ[name]
+    return re.sub(r"\$\{([A-Za-z_][A-Za-z0-9_]*)\}", sub, url)
+
+
 def _api_key(cfg) -> str:
     if cfg.get("auth", "modal") == "modal":
         # token_prefix lets one config address several Modal workspaces
@@ -119,7 +142,7 @@ class ChatModel:
             self.mock = MockBrain(seed=cfg.get("seed", 0))
         else:
             from openai import AsyncOpenAI
-            self.client = AsyncOpenAI(base_url=cfg["base_url"], api_key=_api_key(cfg),
+            self.client = AsyncOpenAI(base_url=_base_url(cfg), api_key=_api_key(cfg),
                                       timeout=cfg.get("timeout", 240), max_retries=0)
 
     async def complete(self, messages, schema_name, schema, meta=None, max_tokens=512):
