@@ -145,8 +145,8 @@ sequenceDiagram
     A->>C: bid, statement, declaration
     B->>C: bid, statement, declaration
     X->>C: bid, statement, declaration
-    C->>A: publish all bids and the winner; pay profit + bonus
-    C->>B: publish all bids and the winner; pay profit + bonus
+    C->>A: publish all bids and the winner, pay profit and bonus
+    C->>B: publish all bids and the winner, pay profit and bonus
     C->>X: publish all bids and the winner
 ```
 
