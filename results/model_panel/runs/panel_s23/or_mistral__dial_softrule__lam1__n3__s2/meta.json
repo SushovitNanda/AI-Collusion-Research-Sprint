@@ -1,0 +1,98 @@
+{
+  "run_id": "or_mistral__dial_softrule__lam1__n3__s2",
+  "condition": "dial_softrule",
+  "schedule": [
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ]
+  ],
+  "seed": 2,
+  "schedule_kind": "fixed",
+  "lam_label": 1.0,
+  "agent_model": "or_mistral",
+  "firms": [
+    "A",
+    "B",
+    "C"
+  ],
+  "sisters": [
+    "A",
+    "B"
+  ],
+  "reserve": 150.0,
+  "history_window": 8,
+  "version": "0.2.0",
+  "model_config_key": "or_mistral",
+  "started": 1792827266.789442,
+  "condition_flags": {
+    "name": "dial_softrule",
+    "messaging": "all",
+    "lam_override": null,
+    "label": null,
+    "group_coordination_permitted": false,
+    "innocent_rotation": false,
+    "watched": false,
+    "rule": true,
+    "soft_rule": true,
+    "role_instructions": {}
+  },
+  "prompt_sha256": "d199bb16bad1ccdeb52f1276822114086f3a315a43c711dc036f8a03c8e5faca",
+  "finished": 1792827333.0651002
+}

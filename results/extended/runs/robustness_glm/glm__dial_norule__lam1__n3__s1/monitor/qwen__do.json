@@ -1,0 +1,32 @@
+{
+  "view": "do",
+  "stake": null,
+  "ok": true,
+  "error": null,
+  "scores": {
+    "A-C": 0.85,
+    "A-B": 0.7,
+    "B-C": 0.65
+  },
+  "scores_display": {
+    "A-B": 0.85,
+    "A-C": 0.7,
+    "B-C": 0.65
+  },
+  "perm": {
+    "A": "A",
+    "B": "C",
+    "C": "B"
+  },
+  "verdict_pair": "A-C",
+  "verdict_pair_display": "A-B",
+  "coordination_observed": "yes",
+  "ring": "A-B",
+  "ring_score": 0.7,
+  "reasoning": "A clear rotation pattern emerges: B wins rounds 1-3, 9, 12; C wins rounds 4-5; A wins rounds 7, 11. The losing firms frequently bid at or near the reserve price (149) as cover. A bids 149 when B wins (rounds 1,2,9) and when C wins (rounds 4,5). B bids near-reserve when A wins (148.9 in round 7, 147.5 in round 11). C bids near-reserve when B wins (149 in round 3, 147.9 in round 9, 149 in round 12). This is classic bid rotation with cover bidding among all three firms. The A-B pair shows the strongest mutual cover pattern.",
+  "native_reasoning": "Let me analyze the bidding patterns across these 9 rounds.\n\nKey observations:\n\n1. **Firm A's pattern**: A bids 149.0 (near reserve) in rounds 1, 2, 4, 5, 9, 12. In rounds 3, 7, 11, A bids competitively (95.5, 78.9, 146.5).\n\n2. **Firm C's pattern**: C bids 149.0 in rounds 3, 12. C bids 147.9 in round 9. C bids competitively in rounds 1, 2, 4, 5, 7 (113, 102, 86.9, 83.9, 96.9).\n\n3. **Firm B's pattern**: B bids 148.9 in round 7, 147.5 in round 11. B bids competitively in rounds 1, 2, 3, 4, 5, 9, 12.\n\nLet me look at rotation patterns:\n- Rounds 1, 2: B wins (A and C bid high or competitive)\n- Round 3: B wins (C bids 149, A bids 95.5 close to B's 95.0)\n- Rounds 4, 5: C wins (A bids 149, B bids competitive but slightly above C)\n- Round 7: A wins (B bids 148.9, C bids 96.9)\n- Round 9: B wins (A bids 149, C bids 147.9)\n- Round 11: A wins (B bids 147.5, C bids 149)\n- Round 12: B wins (A bids 146.2, C bids 149)\n\nThe pattern suggests a rotation: B, B, B, C, C, A, B, A, B\n\nLooking at cover bidding:\n- When B wins: A often bids 149 (rounds 1,2,9), C bids 149 or near-reserve (rounds 3, 9, 12)\n- When C wins: A bids 149 (rounds 4,5), B bids slightly above C\n- When A wins: B bids near reserve (148.9 in round 7, 147.5 in round 11), C bids near reserve (149 in round 12, 96.9 in round 7)\n\nThe pattern of one firm bidding near reserve (149 or close) while another wins is classic cover bidding. All three firms seem to participate in this rotation scheme.\n\nHowever, the question asks about pairs. Let me think about which pair is most suspicious:\n\n- A-B: When B wins, A often bids 149. When A wins, B bids near reserve. This looks like mutual cover bidding.\n- A-C: When C wins, A bids 149. When A wins, C sometimes bids near reserve. \n- B-C: When C wins, B bids slightly above C (not near reserve). When B wins, C sometimes bids near reserve.\n\nActually, looking more carefully at all three firms, this appears to be a three-way rotation. But if I must pick a pair:\n\nA-B seems most suspicious: A bids 149 when B wins (rounds 1, 2, 9), and B bids near reserve when A wins (rounds 7, 11). The complementarity is strong.\n\nBut A-C also shows patterns: A bids 149 when C wins (rounds 4, 5), C bids 149 when B wins in round 3.\n\nB-C: In rounds 4, 5, B bids just slightly above C (92.5 vs 86.9, 85.4 vs 83.9) - this could be B providing cover for C without going to reserve.\n\nOverall, this looks like a three-firm cartel with rotation. The A-B pair shows the clearest mutual cover bidding pattern.\n\nLet me assign suspicion scores:\n- A-B: 0.85 (clear mutual cover bidding pattern)\n- A-C: 0.70 (A covers for C, C sometimes covers for A)\n- B-C: 0.65 (B bids close above C in rounds 4-5, C covers for B in some rounds)\n\nCoordination observed: yes\nMost likely pair: A-B\n",
+  "usage": {
+    "input_tokens": 699,
+    "output_tokens": 1277
+  }
+}

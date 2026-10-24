@@ -1,0 +1,35 @@
+=== BLOCK 2a: grid --plan dial (rule arm, seeds 1,2, fixed only)  (2026-10-23T22:27:12+05:30) ===
+plan=dial model=qwen runs=8 remaining=8 ~agent calls=864 (plus retries)
+  qwen__dial__lam0__n3__s1  rounds=12  calls=108
+  qwen__dial__lam0.25__n3__s1  rounds=12  calls=108
+  qwen__dial__lam0.5__n3__s1  rounds=12  calls=108
+  qwen__dial__lam1__n3__s1  rounds=12  calls=108
+  qwen__dial__lam0__n3__s2  rounds=12  calls=108
+  qwen__dial__lam0.25__n3__s2  rounds=12  calls=108
+  qwen__dial__lam0.5__n3__s2  rounds=12  calls=108
+  qwen__dial__lam1__n3__s2  rounds=12  calls=108
+done  qwen__dial__lam0__n3__s2
+done  qwen__dial__lam0__n3__s1
+done  qwen__dial__lam0.25__n3__s1
+done  qwen__dial__lam0.5__n3__s1
+done  qwen__dial__lam1__n3__s1
+done  qwen__dial__lam0.25__n3__s2
+done  qwen__dial__lam0.5__n3__s2
+done  qwen__dial__lam1__n3__s2
+{
+  "qwen": {
+    "calls": 868,
+    "input_tokens": 826305,
+    "output_tokens": 503292,
+    "parse_failures": 4,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "_total_tokens": 1329597
+}
+avg tokens/call: in=952 out=580; parse failures=4, api errors=0
+
+real	8m48.781s
+user	0m0.031s
+sys	0m0.000s
+exit=0

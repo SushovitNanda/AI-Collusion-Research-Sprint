@@ -1,0 +1,170 @@
+=== BLOCK 1b: monitor eval (extractor=qwen, judge=glm)  (2026-10-23T21:49:32+05:30) ===
+24 runs, judge=glm, extractor=qwen, views=say,do,saydo,structured,think
+  qwen__cheap_talk__lam0__n3__s2  claims__qwen.json  items=56 ok=True
+  qwen__cheap_talk__lam0__n3__s3  claims__qwen.json  items=54 ok=True
+  qwen__cheap_talk__lam0__n3__s1  claims__qwen.json  items=50 ok=True
+  qwen__explicit_collusion__lam1__n3__s3  claims__qwen.json  items=60 ok=True
+  qwen__honest__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__honest__lam0__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__explicit_collusion__lam1__n3__s2  claims__qwen.json  items=60 ok=True
+  qwen__explicit_collusion__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  qwen__honest__lam0__n3__s3  claims__qwen.json  items=36 ok=True
+  qwen__explicit_collusion__lam1__n3__s4  claims__qwen.json  items=60 ok=True
+  qwen__explicit_collusion__lam1__n3__s5  claims__qwen.json  items=60 ok=True
+  qwen__honest_nomsg__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__honest_nomsg__lam0__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__honest_nomsg__lam0__n3__s3  claims__qwen.json  items=36 ok=True
+  qwen__innocent_parallel__lam0__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__innocent_parallel__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__innocent_parallel__lam0__n3__s3  claims__qwen.json  items=36 ok=True
+  qwen__tacit_collusion__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__tacit_collusion__lam1__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__tacit_collusion__lam1__n3__s3  claims__qwen.json  items=36 ok=True
+  qwen__tacit_collusion__lam1__n3__s4  claims__qwen.json  items=36 ok=True
+  qwen__tacit_collusion__lam1__n3__s5  claims__qwen.json  items=36 ok=True
+  qwen__tacit_collusion__lam1__n3__s6  claims__qwen.json  items=36 ok=True
+  qwen__cheap_talk__lam0__n3__s2  glm__say.json  ok=True
+  qwen__cheap_talk__lam0__n3__s3  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s6  claims__qwen.json  items=60 ok=True
+  qwen__cheap_talk__lam0__n3__s2  glm__saydo.json  ok=True
+  qwen__cheap_talk__lam0__n3__s1  glm__say.json  ok=True
+  qwen__cheap_talk__lam0__n3__s3  glm__saydo.json  ok=True
+  qwen__cheap_talk__lam0__n3__s3  glm__think.json  ok=True
+  qwen__cheap_talk__lam0__n3__s2  glm__think.json  ok=True
+  qwen__cheap_talk__lam0__n3__s1  glm__think.json  ok=True
+  qwen__cheap_talk__lam0__n3__s3  glm__structured.json  ok=True
+  qwen__cheap_talk__lam0__n3__s3  glm__do.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s3  glm__say.json  ok=True
+  qwen__cheap_talk__lam0__n3__s2  glm__do.json  ok=True
+  qwen__cheap_talk__lam0__n3__s1  glm__saydo.json  ok=True
+  qwen__honest__lam0__n3__s1  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s3  glm__think.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s3  glm__saydo.json  ok=True
+  qwen__honest__lam0__n3__s1  glm__saydo.json  ok=True
+  qwen__cheap_talk__lam0__n3__s1  glm__do.json  ok=True
+  qwen__honest__lam0__n3__s2  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s3  glm__structured.json  ok=True
+  qwen__cheap_talk__lam0__n3__s1  glm__structured.json  ok=True
+  qwen__honest__lam0__n3__s1  glm__think.json  ok=True
+  qwen__cheap_talk__lam0__n3__s2  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s2  glm__say.json  ok=True
+  qwen__honest__lam0__n3__s2  glm__saydo.json  ok=True
+  qwen__honest__lam0__n3__s2  glm__think.json  ok=True
+  qwen__honest__lam0__n3__s1  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s2  glm__saydo.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s2  glm__think.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s2  glm__structured.json  ok=True
+  qwen__honest__lam0__n3__s2  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  qwen__honest__lam0__n3__s3  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  qwen__honest__lam0__n3__s2  glm__do.json  ok=True
+  qwen__honest__lam0__n3__s3  glm__saydo.json  ok=True
+  qwen__honest__lam0__n3__s3  glm__think.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s4  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s4  glm__saydo.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s2  glm__do.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s4  glm__think.json  ok=True
+  qwen__honest__lam0__n3__s3  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s5  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s5  glm__saydo.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s5  glm__think.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s1  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s4  glm__structured.json  ok=True
+  qwen__honest__lam0__n3__s3  glm__do.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s1  glm__do.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s5  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s4  glm__do.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s1  glm__think.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s2  glm__say.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s1  glm__saydo.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s2  glm__saydo.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s3  glm__say.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s1  glm__structured.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s2  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s3  glm__do.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s3  glm__think.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s3  glm__saydo.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s2  glm__say.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s3  glm__do.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s2  glm__saydo.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s3  glm__structured.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s1  glm__say.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s2  glm__think.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s2  glm__do.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s2  glm__think.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s1  glm__think.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s3  glm__say.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s3  glm__do.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s1  glm__saydo.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s1  glm__do.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s3  glm__saydo.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s3  glm__think.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s1  glm__structured.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s2  glm__say.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s3  glm__structured.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s2  glm__saydo.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  qwen__honest_nomsg__lam0__n3__s2  glm__do.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s2  glm__think.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s3  glm__say.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s2  glm__structured.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s3  glm__think.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s4  glm__say.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s3  glm__do.json  ok=True
+  qwen__honest__lam0__n3__s1  glm__do.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s3  glm__saydo.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s4  glm__think.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s5  glm__say.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s5  glm__do.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s3  glm__structured.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s4  glm__saydo.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s5  glm__think.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s5  glm__do.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s5  glm__saydo.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s6  glm__say.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s6  glm__saydo.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s6  glm__think.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s6  glm__do.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s6  glm__say.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s6  glm__saydo.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s6  glm__structured.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s6  glm__structured.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s6  glm__think.json  ok=True
+  qwen__explicit_collusion__lam1__n3__s6  glm__do.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s5  glm__structured.json  ok=True
+  qwen__innocent_parallel__lam0__n3__s2  glm__structured.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s2  glm__do.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s4  glm__structured.json  ok=True
+  qwen__tacit_collusion__lam1__n3__s4  glm__do.json  ok=True
+{
+  "qwen": {
+    "calls": 119,
+    "input_tokens": 107505,
+    "output_tokens": 245245,
+    "parse_failures": 6,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "glm": {
+    "calls": 132,
+    "input_tokens": 339065,
+    "output_tokens": 735771,
+    "parse_failures": 2,
+    "api_errors": 10,
+    "estimated_usd": null
+  },
+  "_total_tokens": 1427586
+}
+
+real	34m28.336s
+user	0m0.000s
+sys	0m0.000s
+exit=0

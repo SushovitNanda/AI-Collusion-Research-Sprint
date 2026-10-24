@@ -1,0 +1,92 @@
+[
+  {
+    "plan": "panel",
+    "model": "or_deepseek",
+    "usage": {
+      "or_deepseek": {
+        "calls": 720,
+        "input_tokens": 858366,
+        "output_tokens": 37883,
+        "parse_failures": 0,
+        "api_errors": 0,
+        "estimated_usd": 0.085
+      },
+      "_total_tokens": 896249
+    }
+  },
+  {
+    "plan": "panel",
+    "model": "or_gemini",
+    "usage": {
+      "or_gemini": {
+        "calls": 720,
+        "input_tokens": 905578,
+        "output_tokens": 146399,
+        "parse_failures": 0,
+        "api_errors": 0,
+        "estimated_usd": 0.446
+      },
+      "_total_tokens": 1051977
+    }
+  },
+  {
+    "plan": "panel",
+    "model": "or_gptoss",
+    "usage": {
+      "or_gptoss": {
+        "calls": 720,
+        "input_tokens": 720503,
+        "output_tokens": 81071,
+        "parse_failures": 0,
+        "api_errors": 0,
+        "estimated_usd": 0.1567
+      },
+      "_total_tokens": 801574
+    }
+  },
+  {
+    "plan": "panel",
+    "model": "or_haiku",
+    "usage": {
+      "or_haiku": {
+        "calls": 720,
+        "input_tokens": 1091079,
+        "output_tokens": 197043,
+        "parse_failures": 0,
+        "api_errors": 0,
+        "estimated_usd": 0.2076
+      },
+      "_total_tokens": 1288122
+    }
+  },
+  {
+    "plan": "panel",
+    "model": "or_llama",
+    "usage": {
+      "or_llama": {
+        "calls": 769,
+        "input_tokens": 762444,
+        "output_tokens": 36142,
+        "parse_failures": 0,
+        "api_errors": 49,
+        "estimated_usd": 0.1669
+      },
+      "_total_tokens": 798586
+    }
+  },
+  {
+    "plan": "panel",
+    "model": "or_mistral",
+    "usage": {
+      "or_mistral": {
+        "calls": 809,
+        "input_tokens": 734998,
+        "output_tokens": 42473,
+        "parse_failures": 0,
+        "api_errors": 120,
+        "estimated_usd": 0.1357
+      },
+      "_total_tokens": 777471
+    }
+  }
+]

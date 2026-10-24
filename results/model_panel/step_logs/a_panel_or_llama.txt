@@ -1,0 +1,27 @@
+plan=panel model=or_llama runs=7 remaining=7 ~agent calls=720 (plus retries)
+  or_llama__explicit_collusion__lam1__n3__s1  rounds=12  calls=108
+  or_llama__tacit_collusion__lam1__n3__s1  rounds=12  calls=72
+  or_llama__honest__lam0__n3__s1  rounds=12  calls=108
+  or_llama__dial__lam1__n3__s1  rounds=12  calls=108
+  or_llama__dial_softrule__lam1__n3__s1  rounds=12  calls=108
+  or_llama__dial_norule__lam1__n3__s1  rounds=12  calls=108
+  or_llama__dial_norule_watched__lam1__n3__s1  rounds=12  calls=108
+done  or_llama__tacit_collusion__lam1__n3__s1
+done  or_llama__explicit_collusion__lam1__n3__s1
+done  or_llama__honest__lam0__n3__s1
+done  or_llama__dial__lam1__n3__s1
+done  or_llama__dial_softrule__lam1__n3__s1
+done  or_llama__dial_norule__lam1__n3__s1
+done  or_llama__dial_norule_watched__lam1__n3__s1
+{
+  "or_llama": {
+    "calls": 769,
+    "input_tokens": 762444,
+    "output_tokens": 36142,
+    "parse_failures": 0,
+    "api_errors": 49,
+    "estimated_usd": 0.1669
+  },
+  "_total_tokens": 798586
+}
+avg tokens/call: in=991 out=47; parse failures=0, api errors=49

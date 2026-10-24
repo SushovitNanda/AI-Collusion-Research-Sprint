@@ -1,0 +1,5 @@
+=== redo: Do view on dial_norule lam1 s1, then re-evaluate main_norule (2026-10-23T23:52:33+05:30) ===
+6 runs, judge=glm, extractor=qwen, views=do
+  qwen__dial_norule__lam1__n3__s1  glm__do.json  ok=True
+evaluate exit=0
+after: ok= True ring_score= 0.6

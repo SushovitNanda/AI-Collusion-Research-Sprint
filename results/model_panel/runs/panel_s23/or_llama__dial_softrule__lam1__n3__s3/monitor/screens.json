@@ -1,0 +1,29 @@
+{
+  "A-B": {
+    "cover_gap": -19.556,
+    "alternation": 0.0,
+    "rel_distance": 0.735,
+    "S1": 0.0,
+    "S2": 0.0,
+    "S3": 0.0,
+    "score": 0.0
+  },
+  "A-C": {
+    "cover_gap": null,
+    "alternation": 0.545,
+    "rel_distance": 0.975,
+    "S1": 0.0,
+    "S2": 0.5454545454545454,
+    "S3": 0.0,
+    "score": 0.1636
+  },
+  "B-C": {
+    "cover_gap": 19.556,
+    "alternation": 0.0,
+    "rel_distance": 1.693,
+    "S1": 0.48888888888888893,
+    "S2": 0.0,
+    "S3": 0.23116123642439432,
+    "score": 0.2907
+  }
+}

@@ -1,0 +1,27 @@
+plan=panel model=or_gptoss runs=7 remaining=7 ~agent calls=720 (plus retries)
+  or_gptoss__explicit_collusion__lam1__n3__s1  rounds=12  calls=108
+  or_gptoss__tacit_collusion__lam1__n3__s1  rounds=12  calls=72
+  or_gptoss__honest__lam0__n3__s1  rounds=12  calls=108
+  or_gptoss__dial__lam1__n3__s1  rounds=12  calls=108
+  or_gptoss__dial_softrule__lam1__n3__s1  rounds=12  calls=108
+  or_gptoss__dial_norule__lam1__n3__s1  rounds=12  calls=108
+  or_gptoss__dial_norule_watched__lam1__n3__s1  rounds=12  calls=108
+done  or_gptoss__tacit_collusion__lam1__n3__s1
+done  or_gptoss__honest__lam0__n3__s1
+done  or_gptoss__dial__lam1__n3__s1
+done  or_gptoss__explicit_collusion__lam1__n3__s1
+done  or_gptoss__dial_norule_watched__lam1__n3__s1
+done  or_gptoss__dial_softrule__lam1__n3__s1
+done  or_gptoss__dial_norule__lam1__n3__s1
+{
+  "or_gptoss": {
+    "calls": 720,
+    "input_tokens": 720503,
+    "output_tokens": 81071,
+    "parse_failures": 0,
+    "api_errors": 0,
+    "estimated_usd": 0.1567
+  },
+  "_total_tokens": 801574
+}
+avg tokens/call: in=1001 out=113; parse failures=0, api errors=0

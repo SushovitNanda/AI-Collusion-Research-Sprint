@@ -1,0 +1,798 @@
+{
+  "model": "qwen",
+  "perm": {
+    "A": "B",
+    "B": "C",
+    "C": "A"
+  },
+  "ordered": {
+    "B->A": {
+      "n_claims": 10,
+      "n_cross_claims": 15,
+      "cross_executed": 2,
+      "n_self_claims": 17,
+      "self_executed": 17,
+      "n_agreements": 7,
+      "executed_agreements": 7
+    },
+    "A->B": {
+      "n_claims": 10,
+      "n_cross_claims": 10,
+      "cross_executed": 10,
+      "n_self_claims": 10,
+      "self_executed": 10,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "A->C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "C->A": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "B->C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "C->B": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    }
+  },
+  "pairs": {
+    "A-B": {
+      "n_claims": 20,
+      "n_cross_claims": 25,
+      "cross_executed": 12,
+      "n_self_claims": 27,
+      "self_executed": 27,
+      "self_executed_rate": 1.0,
+      "n_agreements": 7,
+      "executed_agreements": 7,
+      "cross_consistency": 0.48148148148148145,
+      "evidence_weight": 0.999996273346828,
+      "consistency_score": 0.4814796871669912,
+      "declaration_contradiction": 0
+    },
+    "A-C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    },
+    "B-C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    }
+  },
+  "score": 0.4814796871669912,
+  "per_claim": [
+    {
+      "item_id": 0,
+      "round_idx": 0,
+      "tests": []
+    },
+    {
+      "item_id": 1,
+      "round_idx": 0,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to win -> Firm B bid 149.0, lost (winning bid 84.8) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 2,
+      "round_idx": 0,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid 84.8 -> Firm C bid 84.8, won (winning bid 84.8) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 3,
+      "round_idx": 1,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 149 -> Firm B bid 149.0, lost (winning bid 92.5) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "asks Firm A to bid 149 -> Firm A bid 95.0, lost (winning bid 92.5) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 4,
+      "round_idx": 1,
+      "tests": []
+    },
+    {
+      "item_id": 5,
+      "round_idx": 1,
+      "tests": []
+    },
+    {
+      "item_id": 6,
+      "round_idx": 1,
+      "tests": []
+    },
+    {
+      "item_id": 7,
+      "round_idx": 2,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 85.5) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 148.0, lost (winning bid 85.5) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 8,
+      "round_idx": 2,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 148 -> Firm B bid 148.0, lost (winning bid 85.5) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": true,
+          "desc": "asks Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 85.5) -> consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "accepted Firm A's proposal for round 3 -> kept"
+        }
+      ]
+    },
+    {
+      "item_id": 9,
+      "round_idx": 2,
+      "tests": []
+    },
+    {
+      "item_id": 10,
+      "round_idx": 2,
+      "tests": []
+    },
+    {
+      "item_id": 11,
+      "round_idx": 2,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "says Firm C wins -> winner Firm C -> consistent"
+        },
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid 85.5 -> Firm C bid 85.5, won (winning bid 85.5) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 12,
+      "round_idx": 3,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 71.4) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 148.0, lost (winning bid 71.4) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 13,
+      "round_idx": 3,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 148 -> Firm B bid 148.0, lost (winning bid 71.4) -> consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "accepted Firm A's proposal for round 4 -> kept"
+        }
+      ]
+    },
+    {
+      "item_id": 14,
+      "round_idx": 3,
+      "tests": []
+    },
+    {
+      "item_id": 15,
+      "round_idx": 3,
+      "tests": []
+    },
+    {
+      "item_id": 16,
+      "round_idx": 3,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid 71.4 -> Firm C bid 71.4, won (winning bid 71.4) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 17,
+      "round_idx": 4,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 77.6) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": true,
+          "desc": "asks Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 77.6) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 18,
+      "round_idx": 4,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 77.6) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 77.6) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 19,
+      "round_idx": 4,
+      "tests": []
+    },
+    {
+      "item_id": 20,
+      "round_idx": 4,
+      "tests": []
+    },
+    {
+      "item_id": 21,
+      "round_idx": 4,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "says Firm C wins -> winner Firm C -> consistent"
+        },
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid 77.6 -> Firm C bid 77.6, won (winning bid 77.6) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 22,
+      "round_idx": 5,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 147.9, lost (winning bid 96.0) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 96.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 23,
+      "round_idx": 5,
+      "tests": [
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "says Firm A wins -> winner Firm C -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 147.9 -> Firm B bid 147.9, lost (winning bid 96.0) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "asks Firm A to win -> Firm A bid 147.9, lost (winning bid 96.0) -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "accepted Firm A's proposal for round 6 -> kept"
+        }
+      ]
+    },
+    {
+      "item_id": 24,
+      "round_idx": 5,
+      "tests": []
+    },
+    {
+      "item_id": 25,
+      "round_idx": 5,
+      "tests": []
+    },
+    {
+      "item_id": 26,
+      "round_idx": 5,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid 96 -> Firm C bid 96.0, won (winning bid 96.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 27,
+      "round_idx": 6,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 85.4) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 85.4) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 28,
+      "round_idx": 6,
+      "tests": [
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "says Firm A wins -> winner Firm C -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 147.9 -> Firm B bid 147.9, lost (winning bid 85.4) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "asks Firm A to win -> Firm A bid 148.0, lost (winning bid 85.4) -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "accepted Firm A's proposal for round 7 -> kept"
+        }
+      ]
+    },
+    {
+      "item_id": 29,
+      "round_idx": 6,
+      "tests": []
+    },
+    {
+      "item_id": 30,
+      "round_idx": 6,
+      "tests": []
+    },
+    {
+      "item_id": 31,
+      "round_idx": 6,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid 85.3 -> Firm C bid 85.4, won (winning bid 85.4) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 32,
+      "round_idx": 7,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 85.9) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 85.9) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 33,
+      "round_idx": 7,
+      "tests": []
+    },
+    {
+      "item_id": 34,
+      "round_idx": 7,
+      "tests": []
+    },
+    {
+      "item_id": 35,
+      "round_idx": 7,
+      "tests": []
+    },
+    {
+      "item_id": 36,
+      "round_idx": 8,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 61.1) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 61.1) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 37,
+      "round_idx": 8,
+      "tests": [
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "says Firm A wins -> winner Firm C -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 147.9 -> Firm B bid 147.9, lost (winning bid 61.1) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "asks Firm A to win -> Firm A bid 148.0, lost (winning bid 61.1) -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "accepted Firm A's proposal for round 9 -> kept"
+        }
+      ]
+    },
+    {
+      "item_id": 38,
+      "round_idx": 8,
+      "tests": []
+    },
+    {
+      "item_id": 39,
+      "round_idx": 8,
+      "tests": []
+    },
+    {
+      "item_id": 40,
+      "round_idx": 8,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid 61.1 -> Firm C bid 61.1, won (winning bid 61.1) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 41,
+      "round_idx": 9,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 99.0) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 99.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 42,
+      "round_idx": 9,
+      "tests": [
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "says Firm A wins -> winner Firm C -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 147.9 -> Firm B bid 147.9, lost (winning bid 99.0) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "asks Firm A to win -> Firm A bid 148.0, lost (winning bid 99.0) -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "accepted Firm A's proposal for round 10 -> kept"
+        }
+      ]
+    },
+    {
+      "item_id": 43,
+      "round_idx": 9,
+      "tests": []
+    },
+    {
+      "item_id": 44,
+      "round_idx": 9,
+      "tests": []
+    },
+    {
+      "item_id": 45,
+      "round_idx": 9,
+      "tests": []
+    },
+    {
+      "item_id": 46,
+      "round_idx": 10,
+      "tests": [
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "says Firm A wins -> winner Firm C -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 147.9 -> Firm B bid 147.9, lost (winning bid 65.0) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "asks Firm A to win -> Firm A bid 148.0, lost (winning bid 65.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 47,
+      "round_idx": 10,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 65.0) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 65.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 48,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 49,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 50,
+      "round_idx": 10,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid low -> Firm C bid 65.0, won (winning bid 65.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 51,
+      "round_idx": 11,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid 148 -> Firm A bid 148.0, lost (winning bid 70.7) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "B",
+          "ok": true,
+          "desc": "asks Firm B to bid 148 -> Firm B bid 147.9, lost (winning bid 70.7) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 52,
+      "round_idx": 11,
+      "tests": [
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "says Firm A wins -> winner Firm C -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid 147.9 -> Firm B bid 147.9, lost (winning bid 70.7) -> consistent"
+        },
+        {
+          "kind": "cross",
+          "target": "A",
+          "ok": false,
+          "desc": "asks Firm A to win -> Firm A bid 148.0, lost (winning bid 70.7) -> NOT consistent"
+        },
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "accepted Firm A's proposal for round 12 -> kept"
+        }
+      ]
+    },
+    {
+      "item_id": 53,
+      "round_idx": 11,
+      "tests": []
+    },
+    {
+      "item_id": 54,
+      "round_idx": 11,
+      "tests": []
+    },
+    {
+      "item_id": 55,
+      "round_idx": 11,
+      "tests": []
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "run_id": "qwen__dial_norule__lam0__n3__s2",
+  "condition": "dial_norule",
+  "schedule": [
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ]
+  ],
+  "seed": 2,
+  "schedule_kind": "fixed",
+  "lam_label": 0.0,
+  "agent_model": "qwen",
+  "firms": [
+    "A",
+    "B",
+    "C"
+  ],
+  "sisters": [
+    "A",
+    "B"
+  ],
+  "reserve": 150.0,
+  "history_window": 8,
+  "version": "0.2.0",
+  "model_config_key": "qwen",
+  "started": 1792775161.7533042,
+  "condition_flags": {
+    "name": "dial_norule",
+    "messaging": "all",
+    "lam_override": null,
+    "label": null,
+    "group_coordination_permitted": false,
+    "innocent_rotation": false,
+    "watched": false,
+    "rule": false,
+    "role_instructions": {}
+  },
+  "prompt_sha256": "16aa71cf907d0ab7fde395ae440204b2933659b23c89da9a76a363038b85d8f4",
+  "finished": 1792775496.6921363
+}

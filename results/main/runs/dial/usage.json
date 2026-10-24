@@ -1,0 +1,17 @@
+[
+  {
+    "plan": "dial",
+    "model": "qwen",
+    "usage": {
+      "qwen": {
+        "calls": 868,
+        "input_tokens": 826305,
+        "output_tokens": 503292,
+        "parse_failures": 4,
+        "api_errors": 0,
+        "estimated_usd": null
+      },
+      "_total_tokens": 1329597
+    }
+  }
+]

@@ -2,10 +2,15 @@
 
 Output: <out_dir>/<run_id>/meta.json and rounds.jsonl (one line per round,
 flushed as it goes, so a crashed run keeps its finished rounds).
+
+Messaging (v0.2): when the condition's messaging mode is 'all', every firm,
+in an order that rotates each round, may send one private message to any one
+other firm. A firm sees only messages it sent or received.
 """
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import random
 import time
@@ -13,10 +18,11 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 from . import prompts as P
-from .auction import CONDITIONS, FIRMS, RESERVE, SISTERS, draw_costs, resolve, scores, sister_of
+from .auction import FIRMS, RESERVE, SISTERS, draw_costs, get_condition, resolve, scores, sister_of
 from .llm import ChatModel
 
 MAX_TOKENS = {"plan": 400, "channel": 200, "act": 300}
+VERSION = "0.2.0"
 
 
 @dataclass
@@ -28,7 +34,7 @@ class RunSpec:
     schedule_kind: str = "fixed"
     lam_label: float | None = None
     agent_model: str = "glm"
-    firms: list = field(default_factory=lambda: list(FIRMS))
+    firms: list = field(default_factory=lambda: list(FIRMS[:3]))
     sisters: tuple = SISTERS
     reserve: float = RESERVE
     history_window: int = 8
@@ -42,6 +48,23 @@ def _bid(x):
         return None
 
 
+def store_message(round_chat: list, rnd: int, sender: str, data, firms) -> dict | None:
+    """Validate one channel reply; append and return the stored message, or None.
+    Empty text, to == NONE, unknown recipients and messages to self are dropped."""
+    d = data or {}
+    to = str(d.get("to") or "NONE").strip().upper()
+    text = str(d.get("message") or "").strip()
+    if to == "NONE" or not text or to == sender or to not in firms:
+        return None
+    m = {"round": rnd, "from": sender, "to": to, "text": text}
+    round_chat.append(m)
+    return m
+
+
+def involving(messages, firm):
+    return [m for m in messages if firm in (m["from"], m["to"])]
+
+
 def is_complete(run_dir: Path) -> bool:
     meta, rounds = run_dir / "meta.json", run_dir / "rounds.jsonl"
     if not (meta.exists() and rounds.exists()):
@@ -51,28 +74,32 @@ def is_complete(run_dir: Path) -> bool:
 
 
 async def play_run(spec: RunSpec, model: ChatModel, out_dir: str | Path) -> Path:
-    cond = CONDITIONS[spec.condition]
+    cond = get_condition(spec.condition)
     run_dir = Path(out_dir) / spec.run_id
     if is_complete(run_dir):
         return run_dir
     run_dir.mkdir(parents=True, exist_ok=True)
-    meta = {**asdict(spec), "model_config_key": model.key, "started": time.time(),
+    meta = {**asdict(spec), "condition": cond.name, "version": VERSION,
+            "model_config_key": model.key, "started": time.time(),
             "condition_flags": asdict(cond)}
     (run_dir / "meta.json").write_text(json.dumps(meta, indent=2))
 
     cost_rng = random.Random(spec.seed * 1000 + 7)    # same costs for the same seed
     tie_rng = random.Random(spec.seed * 1000 + 13)
-    systems = {f: P.firm_system_prompt(f, spec.firms, spec.sisters, cond, spec.reserve)
-               for f in spec.firms}
+    firms = list(spec.firms)
+    systems = {f: P.firm_system_prompt(f, firms, spec.sisters, cond, spec.reserve) for f in firms}
+    # Freeze proof: the report can show every run of a condition used identical prompts.
+    meta["prompt_sha256"] = hashlib.sha256("\n".join(systems[f] for f in firms).encode()).hexdigest()
+    (run_dir / "meta.json").write_text(json.dumps(meta, indent=2))
     history, chat_history = [], []
-    totals = {f: 0.0 for f in spec.firms}
-    last_notes = {f: "" for f in spec.firms}
+    totals = {f: 0.0 for f in firms}
+    last_notes = {f: "" for f in firms}
     prev_lam = None
 
     with (run_dir / "rounds.jsonl").open("w") as fh:
         for rnd, (lam, phase, block) in enumerate(spec.schedule):
             lam_eff = cond.lam_override if cond.lam_override is not None else lam
-            costs = draw_costs(cost_rng, rnd, cond, spec.firms, spec.sisters)
+            costs = draw_costs(cost_rng, rnd, cond, firms, spec.sisters)
             changed = prev_lam is not None and lam_eff != prev_lam
             calls = []
 
@@ -81,15 +108,19 @@ async def play_run(spec: RunSpec, model: ChatModel, out_dir: str | Path) -> Path
                             cost=costs[f], lam=lam_eff, prev_lam=prev_lam or 0.0,
                             policy_changed=changed, total_score=totals[f],
                             history=history, window=spec.history_window,
-                            channel=cond.channel, chat_history=chat_history,
+                            messaging=cond.messaging,
+                            chat_history=involving(chat_history, f),
                             last_notes=last_notes[f])
 
             def meta_for(f, **kw):
+                # meta is read only by the offline mock (all costs let it script the
+                # explicit ring's lower-cost-wins style); real models never see it
                 return dict(run_id=spec.run_id, firm=f, sister=sister_of(f, spec.sisters),
-                            is_sister=f in spec.sisters, sisters=spec.sisters, round=rnd,
-                            lam=lam_eff, cost=costs[f], reserve=spec.reserve,
-                            condition=spec.condition,
-                            positive_control=cond.positive_control, **kw)
+                            is_sister=f in spec.sisters, sisters=spec.sisters, firms=firms,
+                            round=rnd, lam=lam_eff, cost=costs[f], costs=costs,
+                            reserve=spec.reserve, condition=cond.name, label=cond.label,
+                            messaging=cond.messaging,
+                            instructed=cond.group_coordination_permitted, **kw)
 
             async def call(f, stage, user, schema, **kw):
                 res = await model.complete(
@@ -103,43 +134,38 @@ async def play_run(spec: RunSpec, model: ChatModel, out_dir: str | Path) -> Path
 
             # Stage 1: private plans
             plans_raw = await asyncio.gather(
-                *[call(f, "plan", P.think_prompt(ctx(f)), P.THINK_SCHEMA) for f in spec.firms])
+                *[call(f, "plan", P.think_prompt(ctx(f)), P.THINK_SCHEMA) for f in firms])
             plans = {f: (p or {"notes": "", "intended_bid": None})
-                     for f, p in zip(spec.firms, plans_raw)}
+                     for f, p in zip(firms, plans_raw)}
 
-            # Stage 2: internal channel (sisters only), alternating who speaks first
+            # Stage 2: private messages, every firm, rotating order; each sees its inbox
             round_chat = []
-            if cond.channel:
-                order = list(spec.sisters) if rnd % 2 == 0 else list(reversed(spec.sisters))
-                incoming = None
+            if cond.messaging == "all":
+                k = rnd % len(firms)
+                order = firms[k:] + firms[:k]
                 for f in order:
-                    d = await call(f, "channel", P.channel_prompt(ctx(f), plans[f], incoming),
-                                   P.CHANNEL_SCHEMA, incoming=incoming,
+                    inbox = [m for m in round_chat if m["to"] == f]
+                    d = await call(f, "channel", P.channel_prompt(ctx(f), plans[f], inbox, firms),
+                                   P.channel_schema(f, firms), inbox=inbox,
                                    intended_bid=plans[f].get("intended_bid"))
-                    text = ((d or {}).get("message") or "").strip()
-                    if text:
-                        round_chat.append({"round": rnd, "from": f,
-                                           "to": sister_of(f, spec.sisters), "text": text})
-                    incoming = text or None
+                    store_message(round_chat, rnd, f, d, firms)
 
             # Stage 3: sealed bids, public statements, declarations
-            def chat_for(f):
-                return round_chat if f in spec.sisters else []
-
             acts_raw = await asyncio.gather(*[
-                call(f, "act", P.act_prompt(ctx(f), plans[f], chat_for(f)), P.ACT_SCHEMA,
-                     intended_bid=plans[f].get("intended_bid")) for f in spec.firms])
+                call(f, "act", P.act_prompt(ctx(f), plans[f], involving(round_chat, f)),
+                     P.ACT_SCHEMA, intended_bid=plans[f].get("intended_bid"),
+                     inbox=involving(round_chat, f)) for f in firms])
             acts = {}
-            for f, a in zip(spec.firms, acts_raw):
+            for f, a in zip(firms, acts_raw):
                 a = a or {}
                 acts[f] = {"bid": _bid(a.get("bid")),
                            "public_statement": a.get("public_statement", ""),
                            "declaration": a.get("declaration")}
 
-            bids = {f: acts[f]["bid"] for f in spec.firms}
+            bids = {f: acts[f]["bid"] for f in firms}
             winner, wbid, profits = resolve(bids, costs, spec.reserve, tie_rng)
             sc = scores(profits, lam_eff, spec.sisters)
-            for f in spec.firms:
+            for f in firms:
                 totals[f] += sc[f]
                 last_notes[f] = plans[f].get("notes", "")
 

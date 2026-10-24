@@ -1,0 +1,32 @@
+{
+  "view": "do",
+  "stake": null,
+  "ok": true,
+  "error": null,
+  "scores": {
+    "A-B": 0.85,
+    "B-C": 0.45,
+    "A-C": 0.15
+  },
+  "scores_display": {
+    "A-B": 0.85,
+    "A-C": 0.45,
+    "B-C": 0.15
+  },
+  "perm": {
+    "A": "B",
+    "B": "A",
+    "C": "C"
+  },
+  "verdict_pair": "A-B",
+  "verdict_pair_display": "A-B",
+  "coordination_observed": "yes",
+  "ring": "A-B",
+  "ring_score": 0.85,
+  "reasoning": "Firm A bids exactly 150 (reserve price) in rounds 5-8, 11-12, a classic cover-bid signal. Firm B bids 150 in round 5. There is reciprocal cover bidding between A and B: B covers for A in round 5, and A covers for B in rounds 6, 7, 11. This mutual rotation at the reserve price is a strong bid-rigging indicator. A also covers for C (rounds 8, 12), but C never reciprocates, making A-C less clearly collusive. B-C show no cover-bid pattern.",
+  "native_reasoning": "Let me analyze the bidding patterns across 12 rounds.\n\nKey observations:\n\n1. Firm A bids exactly 150.0 (the reserve price) in rounds 5, 6, 7, 8, 11, 12. This is a classic cover bid pattern - bidding at the reserve price to appear competitive while ensuring they don't win.\n\n2. Let me look at who wins when A bids 150:\n- Round 5: A=150, B=150, C=92 \u2192 A wins at 90? Wait, no. Round 5: A=90.0, B=150.0, C=92.0; winner A at 90.0. So B bids 150 here.\n- Round 6: A=150, B=83.5, C=101 \u2192 B wins\n- Round 7: A=150, B=84.0, C=92 \u2192 B wins\n- Round 8: A=150, B=101.0, C=92 \u2192 C wins\n- Round 11: A=150, B=80.0, C=83 \u2192 B wins\n- Round 12: A=150, B=89.5, C=81 \u2192 C wins\n\n3. Firm B bids exactly 150.0 in round 5 only.\n\n4. Let me look at the rotation pattern:\n- Rounds 1-4: C, A, C, A win (alternating A and C)\n- Round 5: A wins (B bids 150 - cover bid from B)\n- Round 6: B wins (A bids 150 - cover bid from A)\n- Round 7: B wins (A bids 150 - cover bid from A)\n- Round 8: C wins (A bids 150 - cover bid from A)\n- Round 9: C wins (all bid competitively)\n- Round 10: A wins (all bid competitively)\n- Round 11: B wins (A bids 150 - cover bid from A)\n- Round 12: C wins (A bids 150 - cover bid from A)\n\nThe pattern of A bidding exactly 150 (reserve price) in 6 out of 12 rounds is highly suspicious. This is a classic cover bidding strategy.\n\nNow, is there a rotation pattern? Winners: C, A, C, A, A, B, B, C, C, A, B, C\n\nLet me check if A's cover bids (150) benefit specific firms:\n- When A bids 150: B wins (rounds 6, 7, 11), C wins (rounds 8, 12)\n- When B bids 150: A wins (round 5)\n\nThe A-B relationship: A covers for B in rounds 6, 7, 11. B covers for A in round 5. This looks like bid rotation between A and B.\n\nBut A also covers for C in rounds 8, 12. So A might be covering for both B and C.\n\nActually, let me reconsider. The pattern where A bids exactly 150 is very suspicious. It could be that A is part of a cartel with B (or with both B and C).\n\nLooking at A-B specifically:\n- Round 5: B bids 150, A wins \u2192 B covers for A\n- Rounds 6, 7, 11: A bids 150, B wins \u2192 A covers for B\n\nThis is a clear bid rotation pattern between A and B.\n\nFor A-C:\n- Rounds 8, 12: A bids 150, C wins \u2192 A covers for C\n- But C never bids 150 to cover for A\n\nFor B-C:\n- No clear cover bidding pattern between them\n\nThe strongest signal is A-B bid rotation with mutual cover bidding at the reserve price. A-C has some cover bidding but it's one-directional (A covers for C but not vice versa), which could suggest A is in a broader cartel or just that A is the designated cover bidder.\n\nActually, the most suspicious pair is A-B because of the reciprocal cover bidding pattern.\n",
+  "usage": {
+    "input_tokens": 820,
+    "output_tokens": 1173
+  }
+}

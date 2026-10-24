@@ -1,0 +1,12 @@
+wrote Openrouter_models\smoke\or_haiku__explicit_collusion__lam1__n3__s1
+{
+  "or_haiku": {
+    "calls": 18,
+    "input_tokens": 22652,
+    "output_tokens": 4454,
+    "parse_failures": 0,
+    "api_errors": 0,
+    "estimated_usd": 0.0045
+  },
+  "_total_tokens": 27106
+}

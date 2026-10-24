@@ -1,0 +1,501 @@
+{
+  "model": "qwen",
+  "perm": {
+    "A": "B",
+    "B": "A",
+    "C": "C"
+  },
+  "ordered": {
+    "A->B": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "B->A": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "A->C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "C->A": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "B->C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "C->B": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    }
+  },
+  "pairs": {
+    "A-B": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    },
+    "A-C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    },
+    "B-C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    }
+  },
+  "score": 0.0,
+  "per_claim": [
+    {
+      "item_id": 0,
+      "round_idx": 0,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid low -> Firm A bid 90.0, won (winning bid 90.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 1,
+      "round_idx": 0,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to bid low -> Firm B bid 110.0, lost (winning bid 90.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 2,
+      "round_idx": 0,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 125.0, lost (winning bid 90.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 3,
+      "round_idx": 1,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": false,
+          "desc": "Firm A to bid low -> Firm A bid 106.0, lost (winning bid 80.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 4,
+      "round_idx": 1,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid low -> Firm B bid 80.0, won (winning bid 80.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 5,
+      "round_idx": 1,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 89.0, lost (winning bid 80.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 6,
+      "round_idx": 2,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid low -> Firm A bid 74.0, won (winning bid 74.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 7,
+      "round_idx": 2,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to bid low -> Firm B bid 95.0, lost (winning bid 74.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 8,
+      "round_idx": 2,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 84.0, lost (winning bid 74.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 9,
+      "round_idx": 3,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": false,
+          "desc": "Firm A to bid low -> Firm A bid 98.0, lost (winning bid 79.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 10,
+      "round_idx": 3,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid low -> Firm B bid 79.0, won (winning bid 79.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 11,
+      "round_idx": 3,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 83.0, lost (winning bid 79.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 12,
+      "round_idx": 4,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid low -> Firm A bid 77.0, won (winning bid 77.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 13,
+      "round_idx": 4,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to bid low -> Firm B bid 120.0, lost (winning bid 77.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 14,
+      "round_idx": 4,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 97.0, lost (winning bid 77.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 15,
+      "round_idx": 5,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": false,
+          "desc": "Firm A to bid low -> Firm A bid 96.0, lost (winning bid 76.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 16,
+      "round_idx": 5,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to bid low -> Firm B bid 79.0, lost (winning bid 76.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 17,
+      "round_idx": 5,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid low -> Firm C bid 76.0, won (winning bid 76.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 18,
+      "round_idx": 6,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid low -> Firm A bid 75.0, won (winning bid 75.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 19,
+      "round_idx": 6,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to bid low -> Firm B bid 106.0, lost (winning bid 75.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 20,
+      "round_idx": 6,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 101.0, lost (winning bid 75.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 21,
+      "round_idx": 7,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": false,
+          "desc": "Firm A to bid low -> Firm A bid 102.0, lost (winning bid 76.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 22,
+      "round_idx": 7,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to bid low -> Firm B bid 79.0, lost (winning bid 76.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 23,
+      "round_idx": 7,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": true,
+          "desc": "Firm C to bid low -> Firm C bid 76.0, won (winning bid 76.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 24,
+      "round_idx": 8,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": true,
+          "desc": "Firm A to bid low -> Firm A bid 75.0, won (winning bid 75.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 25,
+      "round_idx": 8,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": false,
+          "desc": "Firm B to bid low -> Firm B bid 110.0, lost (winning bid 75.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 26,
+      "round_idx": 8,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 96.0, lost (winning bid 75.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 27,
+      "round_idx": 9,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "A",
+          "ok": false,
+          "desc": "Firm A to bid low -> Firm A bid 130.0, lost (winning bid 74.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 28,
+      "round_idx": 9,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "B",
+          "ok": true,
+          "desc": "Firm B to bid low -> Firm B bid 74.0, won (winning bid 74.0) -> consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 29,
+      "round_idx": 9,
+      "tests": [
+        {
+          "kind": "self",
+          "target": "C",
+          "ok": false,
+          "desc": "Firm C to bid low -> Firm C bid 97.0, lost (winning bid 74.0) -> NOT consistent"
+        }
+      ]
+    },
+    {
+      "item_id": 30,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 31,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 32,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 33,
+      "round_idx": 11,
+      "tests": []
+    },
+    {
+      "item_id": 34,
+      "round_idx": 11,
+      "tests": []
+    },
+    {
+      "item_id": 35,
+      "round_idx": 11,
+      "tests": []
+    }
+  ]
+}

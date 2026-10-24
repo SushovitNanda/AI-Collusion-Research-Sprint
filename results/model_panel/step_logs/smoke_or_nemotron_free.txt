@@ -1,0 +1,12 @@
+wrote Openrouter_models\smoke\or_nemotron_free__explicit_collusion__lam1__n3__s1
+{
+  "or_nemotron_free": {
+    "calls": 54,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "parse_failures": 0,
+    "api_errors": 54,
+    "estimated_usd": 0.0
+  },
+  "_total_tokens": 0
+}

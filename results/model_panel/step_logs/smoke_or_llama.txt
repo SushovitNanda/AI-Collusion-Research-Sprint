@@ -1,0 +1,12 @@
+wrote Openrouter_models\smoke\or_llama__explicit_collusion__lam1__n3__s1
+{
+  "or_llama": {
+    "calls": 24,
+    "input_tokens": 11434,
+    "output_tokens": 768,
+    "parse_failures": 0,
+    "api_errors": 7,
+    "estimated_usd": 0.0027
+  },
+  "_total_tokens": 12202
+}

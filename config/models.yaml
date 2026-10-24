@@ -1,35 +1,47 @@
 # Model endpoints. Every entry is an OpenAI-compatible chat endpoint.
-# auth: "modal" builds the key from MODAL_PROXY_TOKEN_ID / MODAL_PROXY_TOKEN_SECRET.
-#       Anything else: set api_key_env to the environment variable holding the key.
 #
-# Prices are USD per 1M tokens. Fill them in from your Modal billing page so the
-# usage tracker can estimate spend. Leave null if unknown.
+#   auth: modal       key = $<token_prefix>PROXY_TOKEN_ID.$<token_prefix>PROXY_TOKEN_SECRET
+#                     (token_prefix defaults to MODAL_; a second Modal workspace with the
+#                     same deployments can be addressed by changing base_url and
+#                     token_prefix, e.g. MODAL3_ -> MODAL3_PROXY_TOKEN_ID / _SECRET)
+#   auth: openrouter  key = the environment variable named by api_key_env
+#
+# Prices are USD per 1M tokens and only feed the usage estimate (null = unknown).
+# Roles in the reported runs: qwen = agents, glm = judge for the five views,
+# qwen = claims extractor (the reasoning judge takes minutes per batch), the
+# or_* entries = agent families of the model panel, judged by glm.
+#
+# Provenance of the reported runs: results/main used one Modal workspace for
+# everything; results/extended ran its agents on a second workspace with
+# identical deployments (judging stayed on the first); results/model_panel ran
+# its agents on OpenRouter and its judge/extractor on the second workspace.
 
 models:
-  # Main agent model. Reasoning OFF: thinking tokens would multiply cost and the
-  # game already has an explicit private-planning stage.
+  # ---- Modal deployments (set base_url to your own) ----
   glm:
     model: zai-org/GLM-5.3
-    base_url: https://sushovit-nanda--ep-apart-server.us-west.modal.direct/v1
+    base_url: https://aady-nanda-0301--ep-glm-5-3-server.us-west.modal.direct/v1
     auth: modal
+    token_prefix: MODAL_
     temperature: 0.7
     top_p: 0.9
     extra_body: {reasoning: {enabled: false}}
-    # The current deployment ignores every "thinking off" flag (reasoning.enabled,
+    # This deployment ignores every "thinking off" flag (reasoning.enabled,
     # chat_template_kwargs.enable_thinking, thinking.type, reasoning_effort) and
-    # always reasons first: 1.2k-6k output tokens per call in testing. With a
-    # multiplier of 1 the JSON never arrives. Drop back to 1 once thinking can be
-    # disabled server-side (e.g. default enable_thinking=false in the chat template).
+    # always reasons first (1.2k-6k output tokens per call). The multiplier makes
+    # room for that; with 1 the JSON never arrives. Drop back to 1 once thinking
+    # can be disabled server-side.
     max_tokens_multiplier: 20
+    max_tokens_cap: 32000
+    timeout: 600          # judge and extraction calls reason for minutes
     price_per_m_input: null
     price_per_m_output: null
 
-  # Same model with native reasoning ON (small subsets only: compare its real
-  # reasoning trace with the plan it writes).
-  glm_reason:
+  glm_reason:           # same model with native reasoning requested (small subsets only)
     model: zai-org/GLM-5.3
-    base_url: https://sushovit-nanda--ep-apart-server.us-west.modal.direct/v1
+    base_url: https://aady-nanda-0301--ep-glm-5-3-server.us-west.modal.direct/v1
     auth: modal
+    token_prefix: MODAL_
     temperature: 0.7
     top_p: 0.9
     extra_body: {reasoning: {enabled: true}}
@@ -37,12 +49,11 @@ models:
     price_per_m_input: null
     price_per_m_output: null
 
-  # Monitor / judge model: a different family from the agents, so the monitor
-  # is not judging its own kind. Low reasoning effort keeps cost down.
-  qwen:
+  qwen:                 # agents of the main runs; also the claims extractor
     model: Qwen/Qwen3.8-2.4T-A95B
-    base_url: https://sushovit-nanda--ep-apart2-server.us-west.modal.direct/v1
+    base_url: https://aady-nanda-0301--ep-apart-server.us-west.modal.direct/v1
     auth: modal
+    token_prefix: MODAL_
     temperature: 0.3
     top_p: 0.95
     extra_body: {reasoning_effort: low}
@@ -50,12 +61,86 @@ models:
     price_per_m_input: null
     price_per_m_output: null
 
-  # Offline stand-in that follows a scripted policy. Use it to test the whole
-  # pipeline without spending credits. Its results are synthetic.
+  # ---- OpenRouter agent panel (results/model_panel) ----
+  # Same sampling as the Qwen agents (temperature 0.3, top_p 0.95, strict JSON
+  # schema); reasoning set to the lowest level each model allows. Prices from
+  # the OpenRouter catalogue on 24 Oct 2026. Providers that rate-limit bursts
+  # (Mistral) need `grid --parallel-runs 1`.
+  or_gptoss:            # OpenAI family (open-weight), reasoning effort low
+    model: openai/gpt-oss-120b
+    base_url: https://openrouter.ai/api/v1
+    auth: openrouter
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0.3
+    top_p: 0.95
+    extra_body: {reasoning: {effort: low}}
+    max_tokens_multiplier: 8
+    timeout: 180
+    price_per_m_input: 0.15
+    price_per_m_output: 0.60
+  or_gemini:            # Google family, reasoning effort low
+    model: google/gemini-3.1-flash-lite
+    base_url: https://openrouter.ai/api/v1
+    auth: openrouter
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0.3
+    top_p: 0.95
+    extra_body: {reasoning: {effort: low}}
+    max_tokens_multiplier: 8
+    timeout: 180
+    price_per_m_input: 0.25
+    price_per_m_output: 1.50
+  or_deepseek:          # DeepSeek family, thinking off
+    model: deepseek/deepseek-v4-flash
+    base_url: https://openrouter.ai/api/v1
+    auth: openrouter
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0.3
+    top_p: 0.95
+    extra_body: {reasoning: {enabled: false}}
+    max_tokens_multiplier: 4
+    timeout: 180
+    price_per_m_input: 0.091
+    price_per_m_output: 0.182
+  or_llama:             # Meta family, no reasoning mode
+    model: meta-llama/llama-4-maverick
+    base_url: https://openrouter.ai/api/v1
+    auth: openrouter
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0.3
+    top_p: 0.95
+    max_tokens_multiplier: 4
+    timeout: 180
+    price_per_m_input: 0.188
+    price_per_m_output: 0.652
+  or_mistral:           # Mistral family, no reasoning mode
+    model: mistralai/mistral-small-2603
+    base_url: https://openrouter.ai/api/v1
+    auth: openrouter
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0.3
+    top_p: 0.95
+    max_tokens_multiplier: 4
+    timeout: 180
+    price_per_m_input: 0.15
+    price_per_m_output: 0.60
+  or_haiku:             # Anthropic family, extended thinking off (default)
+    model: anthropic/claude-haiku-5.5
+    base_url: https://openrouter.ai/api/v1
+    auth: openrouter
+    api_key_env: OPENROUTER_API_KEY
+    temperature: 0.3
+    top_p: 0.95
+    max_tokens_multiplier: 4
+    timeout: 180
+    price_per_m_input: 0.10
+    price_per_m_output: 0.50
+
+  # ---- offline stand-in that follows a scripted policy (tests, dry runs) ----
   mock:
     mock: true
 
-# Hard stop: the run aborts once this many tokens (input + output, all models)
-# have been used in one process.
+# Hard stop: a process aborts once this many tokens (input + output, all models)
+# have been used.
 budget:
-  max_total_tokens: 4000000
+  max_total_tokens: 8000000

@@ -1,0 +1,17 @@
+[
+  {
+    "plan": "robustness_dial",
+    "model": "glm",
+    "usage": {
+      "glm": {
+        "calls": 311,
+        "input_tokens": 353618,
+        "output_tokens": 1602646,
+        "parse_failures": 97,
+        "api_errors": 2,
+        "estimated_usd": null
+      },
+      "_total_tokens": 1956264
+    }
+  }
+]

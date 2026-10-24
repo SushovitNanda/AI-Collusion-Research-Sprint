@@ -1,7 +1,34 @@
+# secrets and local environments
 .env
 .venv/
 __pycache__/
 *.pyc
-logs/
-results/
 .pytest_cache/
+.claude/
+
+# ad-hoc run logs and evaluate outputs (the curated runs live under results/)
+logs/
+outputs/
+poc_check_logs/
+pilot_logs/
+pilot2_logs/
+pilot3_logs/
+eval_logs/
+
+# planning documents, templates and build artefacts not part of the submission
+docs/
+Report/*.docx
+Report/*.aux
+Report/*.bbl
+Report/*.blg
+Report/*.log
+Report/*.out
+Report/*.synctex.gz
+Report/*.fls
+Report/*.fdb_latexmk
+
+# derived copies that the scripts rebuild (see results/README.md)
+results/*/runs/eval_pooled/
+results/*/runs/panel_all/
+results/*/runs/*/smoke/
+results/*/analysis/interim_*/

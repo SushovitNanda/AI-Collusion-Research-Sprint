@@ -1,0 +1,62 @@
+42 runs, judge=glm, extractor=qwen, views=say,do,saydo,structured,think
+  or_mistral__dial__lam1__n3__s1  claims__qwen.json  items=37 ok=True
+  or_mistral__dial_softrule__lam1__n3__s1  claims__qwen.json  items=56 ok=True
+  or_mistral__honest__lam0__n3__s1  claims__qwen.json  items=33 ok=True
+  or_mistral__explicit_collusion__lam1__n3__s1  claims__qwen.json  items=57 ok=True
+  or_mistral__tacit_collusion__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_mistral__dial__lam1__n3__s1  glm__say.json  ok=True
+  or_mistral__dial_norule_watched__lam1__n3__s1  claims__qwen.json  items=59 ok=True
+  or_mistral__dial_norule__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  or_mistral__dial__lam1__n3__s1  glm__saydo.json  ok=True
+  or_mistral__dial_softrule__lam1__n3__s1  glm__say.json  ok=True
+  or_mistral__dial_softrule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_mistral__dial_softrule__lam1__n3__s1  glm__think.json  ok=True
+  or_mistral__honest__lam0__n3__s1  glm__say.json  ok=True
+  or_mistral__dial_softrule__lam1__n3__s1  glm__do.json  ok=True
+  or_mistral__dial__lam1__n3__s1  glm__structured.json  ok=True
+  or_mistral__dial__lam1__n3__s1  glm__think.json  ok=True
+  or_mistral__honest__lam0__n3__s1  glm__saydo.json  ok=True
+  or_mistral__honest__lam0__n3__s1  glm__think.json  ok=True
+  or_mistral__explicit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_mistral__honest__lam0__n3__s1  glm__do.json  ok=True
+  or_mistral__dial_softrule__lam1__n3__s1  glm__structured.json  ok=True
+  or_mistral__honest__lam0__n3__s1  glm__structured.json  ok=True
+  or_mistral__tacit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_mistral__explicit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_mistral__explicit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_mistral__tacit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_mistral__tacit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_mistral__tacit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_mistral__explicit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_mistral__dial_norule_watched__lam1__n3__s1  glm__saydo.json  ok=True
+  or_mistral__dial_norule_watched__lam1__n3__s1  glm__say.json  ok=True
+  or_mistral__dial_norule_watched__lam1__n3__s1  glm__think.json  ok=True
+  or_mistral__dial_norule__lam1__n3__s1  glm__say.json  ok=True
+  or_mistral__explicit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_mistral__dial_norule_watched__lam1__n3__s1  glm__structured.json  ok=True
+  or_mistral__dial_norule_watched__lam1__n3__s1  glm__do.json  ok=True
+  or_mistral__tacit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_mistral__dial_norule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_mistral__dial_norule__lam1__n3__s1  glm__structured.json  ok=True
+  or_mistral__dial_norule__lam1__n3__s1  glm__think.json  ok=True
+  or_mistral__dial__lam1__n3__s1  glm__do.json  ok=True
+  or_mistral__dial_norule__lam1__n3__s1  glm__do.json  ok=True
+{
+  "qwen": {
+    "calls": 37,
+    "input_tokens": 32022,
+    "output_tokens": 88995,
+    "parse_failures": 1,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "glm": {
+    "calls": 38,
+    "input_tokens": 102883,
+    "output_tokens": 275714,
+    "parse_failures": 1,
+    "api_errors": 2,
+    "estimated_usd": null
+  },
+  "_total_tokens": 499614
+}

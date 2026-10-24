@@ -1,0 +1,29 @@
+plan=panel_more model=or_gemini runs=8 remaining=8 ~agent calls=864 (plus retries)
+  or_gemini__dial__lam1__n3__s2  rounds=12  calls=108
+  or_gemini__dial_softrule__lam1__n3__s2  rounds=12  calls=108
+  or_gemini__dial_norule__lam1__n3__s2  rounds=12  calls=108
+  or_gemini__dial_norule_watched__lam1__n3__s2  rounds=12  calls=108
+  or_gemini__dial__lam1__n3__s3  rounds=12  calls=108
+  or_gemini__dial_softrule__lam1__n3__s3  rounds=12  calls=108
+  or_gemini__dial_norule__lam1__n3__s3  rounds=12  calls=108
+  or_gemini__dial_norule_watched__lam1__n3__s3  rounds=12  calls=108
+done  or_gemini__dial__lam1__n3__s2
+done  or_gemini__dial_norule_watched__lam1__n3__s2
+done  or_gemini__dial_softrule__lam1__n3__s2
+done  or_gemini__dial_norule__lam1__n3__s2
+done  or_gemini__dial__lam1__n3__s3
+done  or_gemini__dial_softrule__lam1__n3__s3
+done  or_gemini__dial_norule_watched__lam1__n3__s3
+done  or_gemini__dial_norule__lam1__n3__s3
+{
+  "or_gemini": {
+    "calls": 864,
+    "input_tokens": 1128982,
+    "output_tokens": 179397,
+    "parse_failures": 0,
+    "api_errors": 0,
+    "estimated_usd": 0.5513
+  },
+  "_total_tokens": 1308379
+}
+avg tokens/call: in=1307 out=208; parse failures=0, api errors=0

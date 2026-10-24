@@ -1,0 +1,47 @@
+=== monitors extensions (fixed: 5 views; sweeps: claims only)  (2026-10-24T05:08:47+05:30) ===
+6 runs, judge=glm, extractor=qwen, views=say,do,saydo,structured,think
+{
+  "_total_tokens": 0
+}
+
+real	0m1.168s
+user	0m0.015s
+sys	0m0.000s
+8 runs, judge=glm, extractor=qwen, claims only
+{
+  "_total_tokens": 0
+}
+
+real	0m1.230s
+user	0m0.000s
+sys	0m0.015s
+=== monitors robustness_glm (GLM agents judged by Qwen: roles swapped)  (2026-10-24T05:08:50+05:30) ===
+2 runs, judge=qwen, extractor=qwen, views=say,do,saydo,structured,think
+  glm__dial__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  glm__dial__lam1__n3__s1  qwen__say.json  ok=True
+  glm__dial__lam1__n3__s1  qwen__saydo.json  ok=True
+  glm__dial__lam1__n3__s1  qwen__do.json  ok=True
+  glm__dial__lam1__n3__s1  qwen__think.json  ok=True
+  glm__dial__lam1__n3__s1  qwen__structured.json  ok=True
+  glm__dial_norule__lam1__n3__s1  claims__qwen.json  items=57 ok=True
+  glm__dial_norule__lam1__n3__s1  qwen__say.json  ok=True
+  glm__dial_norule__lam1__n3__s1  qwen__saydo.json  ok=True
+  glm__dial_norule__lam1__n3__s1  qwen__structured.json  ok=True
+  glm__dial_norule__lam1__n3__s1  qwen__think.json  ok=True
+  glm__dial_norule__lam1__n3__s1  qwen__do.json  ok=True
+{
+  "qwen": {
+    "calls": 22,
+    "input_tokens": 52736,
+    "output_tokens": 37441,
+    "parse_failures": 2,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "_total_tokens": 90177
+}
+
+real	1m19.336s
+user	0m0.000s
+sys	0m0.000s
+exit=0

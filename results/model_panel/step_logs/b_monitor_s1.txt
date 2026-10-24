@@ -1,0 +1,230 @@
+35 runs, judge=glm, extractor=qwen, views=say,do,saydo,structured,think
+  or_deepseek__honest__lam0__n3__s1  claims__qwen.json  items=39 ok=True
+  or_deepseek__dial_norule_watched__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  or_deepseek__dial__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  or_deepseek__tacit_collusion__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_deepseek__dial_softrule__lam1__n3__s1  claims__qwen.json  items=65 ok=True
+  or_deepseek__dial_norule__lam1__n3__s1  claims__qwen.json  items=66 ok=True
+  or_gemini__dial__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  or_gemini__dial_norule_watched__lam1__n3__s1  claims__qwen.json  items=59 ok=True
+  or_gemini__dial_norule__lam1__n3__s1  claims__qwen.json  items=65 ok=True
+  or_gemini__honest__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  or_deepseek__explicit_collusion__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  or_gemini__tacit_collusion__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_gptoss__dial__lam1__n3__s1  claims__qwen.json  items=37 ok=True
+  or_gemini__dial_softrule__lam1__n3__s1  claims__qwen.json  items=62 ok=True
+  or_gptoss__dial_norule_watched__lam1__n3__s1  claims__qwen.json  items=38 ok=True
+  or_gptoss__honest__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  or_gptoss__tacit_collusion__lam1__n3__s1  claims__qwen.json  items=35 ok=True
+  or_haiku__dial_norule__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_gemini__explicit_collusion__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  or_haiku__dial__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_haiku__dial_softrule__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_haiku__explicit_collusion__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_haiku__dial_norule_watched__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_gptoss__explicit_collusion__lam1__n3__s1  claims__qwen.json  items=59 ok=True
+  or_gptoss__dial_softrule__lam1__n3__s1  claims__qwen.json  items=61 ok=True
+  or_haiku__honest__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  or_haiku__tacit_collusion__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_gptoss__dial_norule__lam1__n3__s1  claims__qwen.json  items=62 ok=True
+  or_llama__dial__lam1__n3__s1  claims__qwen.json  items=60 ok=True
+  or_llama__dial_norule_watched__lam1__n3__s1  claims__qwen.json  items=71 ok=True
+  or_llama__dial_softrule__lam1__n3__s1  claims__qwen.json  items=72 ok=True
+  or_llama__tacit_collusion__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  or_llama__honest__lam0__n3__s1  claims__qwen.json  items=68 ok=True
+  or_llama__explicit_collusion__lam1__n3__s1  claims__qwen.json  items=61 ok=True
+  or_llama__dial_norule__lam1__n3__s1  claims__qwen.json  items=71 ok=True
+  or_deepseek__honest__lam0__n3__s1  glm__say.json  ok=True
+  or_deepseek__dial_norule_watched__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__honest__lam0__n3__s1  glm__think.json  ok=True
+  or_deepseek__honest__lam0__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__dial_norule_watched__lam1__n3__s1  glm__think.json  ok=True
+  or_deepseek__dial_norule_watched__lam1__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__dial__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__dial__lam1__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__dial_norule_watched__lam1__n3__s1  glm__structured.json  ok=True
+  or_deepseek__dial__lam1__n3__s1  glm__think.json  ok=True
+  or_deepseek__dial__lam1__n3__s1  glm__do.json  ok=True
+  or_deepseek__tacit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__honest__lam0__n3__s1  glm__do.json  ok=True
+  or_deepseek__honest__lam0__n3__s1  glm__structured.json  ok=True
+  or_deepseek__tacit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_deepseek__dial_norule_watched__lam1__n3__s1  glm__do.json  ok=True
+  or_deepseek__dial_softrule__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__tacit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_deepseek__dial__lam1__n3__s1  glm__structured.json  ok=True
+  or_deepseek__dial_softrule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__dial_softrule__lam1__n3__s1  glm__think.json  ok=True
+  or_deepseek__dial_norule__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__dial_norule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__dial_norule__lam1__n3__s1  glm__do.json  ok=True
+  or_deepseek__dial_norule__lam1__n3__s1  glm__think.json  ok=True
+  or_gemini__dial__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__dial_softrule__lam1__n3__s1  glm__do.json  ok=True
+  or_gemini__dial__lam1__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__tacit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__dial__lam1__n3__s1  glm__think.json  ok=True
+  or_gemini__dial_norule_watched__lam1__n3__s1  glm__say.json  ok=True
+  or_gemini__dial__lam1__n3__s1  glm__do.json  ok=True
+  or_deepseek__dial_softrule__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__dial_norule_watched__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gemini__dial__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__dial_norule_watched__lam1__n3__s1  glm__think.json  ok=True
+  or_gemini__dial_norule__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__dial_norule__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__dial_norule_watched__lam1__n3__s1  glm__do.json  ok=True
+  or_gemini__dial_norule__lam1__n3__s1  glm__think.json  ok=True
+  or_gemini__honest__lam0__n3__s1  glm__say.json  ok=True
+  or_gemini__dial_norule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gemini__dial_norule_watched__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__honest__lam0__n3__s1  glm__saydo.json  ok=True
+  or_gemini__honest__lam0__n3__s1  glm__think.json  ok=True
+  or_deepseek__tacit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__explicit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_gemini__dial_norule__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__dial_norule__lam1__n3__s1  glm__do.json  ok=True
+  or_deepseek__explicit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_deepseek__explicit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_gemini__tacit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__explicit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_gemini__honest__lam0__n3__s1  glm__structured.json  ok=True
+  or_gemini__tacit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_gptoss__dial__lam1__n3__s1  glm__say.json  ok=True
+  or_deepseek__explicit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_gptoss__dial__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gemini__honest__lam0__n3__s1  glm__do.json  ok=True
+  or_gemini__tacit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__dial_softrule__lam1__n3__s1  glm__say.json  ok=True
+  or_gemini__tacit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_gemini__dial_softrule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__dial__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__tacit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__dial__lam1__n3__s1  glm__think.json  ok=True
+  or_gemini__dial_softrule__lam1__n3__s1  glm__think.json  ok=True
+  or_gptoss__dial_norule_watched__lam1__n3__s1  glm__say.json  ok=True
+  or_gptoss__dial_norule_watched__lam1__n3__s1  glm__do.json  ok=True
+  or_gptoss__dial_norule_watched__lam1__n3__s1  glm__think.json  ok=True
+  or_gemini__dial_softrule__lam1__n3__s1  glm__do.json  ok=True
+  or_gptoss__honest__lam0__n3__s1  glm__say.json  ok=True
+  or_gemini__dial_softrule__lam1__n3__s1  glm__structured.json  ok=True
+  or_gptoss__dial_norule_watched__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__dial_norule_watched__lam1__n3__s1  glm__structured.json  ok=True
+  or_gptoss__tacit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_gptoss__honest__lam0__n3__s1  glm__think.json  ok=True
+  or_gptoss__honest__lam0__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__tacit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_gptoss__tacit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_gptoss__tacit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_haiku__dial_norule__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__dial_norule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__dial__lam1__n3__s1  glm__do.json  ok=True
+  or_haiku__dial_norule__lam1__n3__s1  glm__think.json  ok=True
+  or_haiku__dial_norule__lam1__n3__s1  glm__do.json  ok=True
+  or_gemini__explicit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__dial_norule__lam1__n3__s1  glm__structured.json  ok=True
+  or_gemini__explicit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gemini__explicit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_gptoss__tacit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_gptoss__honest__lam0__n3__s1  glm__structured.json  ok=True
+  or_gemini__explicit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_gemini__explicit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_haiku__dial__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__dial__lam1__n3__s1  glm__saydo.json  ok=True
+  or_haiku__dial__lam1__n3__s1  glm__think.json  ok=True
+  or_haiku__dial_softrule__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__dial_softrule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_haiku__dial_softrule__lam1__n3__s1  glm__do.json  ok=True
+  or_gptoss__honest__lam0__n3__s1  glm__do.json  ok=True
+  or_haiku__explicit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__dial__lam1__n3__s1  glm__do.json  ok=True
+  or_haiku__dial__lam1__n3__s1  glm__structured.json  ok=True
+  or_haiku__explicit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_haiku__dial_softrule__lam1__n3__s1  glm__structured.json  ok=True
+  or_haiku__dial_softrule__lam1__n3__s1  glm__think.json  ok=True
+  or_haiku__dial_norule_watched__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__explicit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_haiku__dial_norule_watched__lam1__n3__s1  glm__think.json  ok=True
+  or_haiku__explicit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_gptoss__explicit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__dial_norule_watched__lam1__n3__s1  glm__saydo.json  ok=True
+  or_haiku__explicit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_haiku__dial_norule_watched__lam1__n3__s1  glm__structured.json  ok=True
+  or_gptoss__explicit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__explicit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_gptoss__dial_softrule__lam1__n3__s1  glm__say.json  ok=True
+  or_gptoss__dial_softrule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__explicit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_haiku__honest__lam0__n3__s1  glm__say.json  ok=True
+  or_gptoss__dial_softrule__lam1__n3__s1  glm__think.json  ok=True
+  or_haiku__honest__lam0__n3__s1  glm__saydo.json  ok=True
+  or_haiku__dial_norule_watched__lam1__n3__s1  glm__do.json  ok=True
+  or_haiku__honest__lam0__n3__s1  glm__do.json  ok=True
+  or_gptoss__explicit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_haiku__honest__lam0__n3__s1  glm__think.json  ok=True
+  or_haiku__honest__lam0__n3__s1  glm__structured.json  ok=True
+  or_gptoss__dial_softrule__lam1__n3__s1  glm__do.json  ok=True
+  or_haiku__tacit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_gptoss__dial_softrule__lam1__n3__s1  glm__structured.json  ok=True
+  or_haiku__tacit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_gptoss__dial_norule__lam1__n3__s1  glm__say.json  ok=True
+  or_haiku__tacit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_gptoss__dial_norule__lam1__n3__s1  glm__think.json  ok=True
+  or_gptoss__dial_norule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_gptoss__dial_norule__lam1__n3__s1  glm__do.json  ok=True
+  or_haiku__tacit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_llama__dial__lam1__n3__s1  glm__saydo.json  ok=True
+  or_llama__dial__lam1__n3__s1  glm__structured.json  ok=True
+  or_llama__dial_norule_watched__lam1__n3__s1  glm__say.json  ok=True
+  or_llama__dial__lam1__n3__s1  glm__think.json  ok=True
+  or_llama__dial_norule_watched__lam1__n3__s1  glm__saydo.json  ok=True
+  or_llama__dial__lam1__n3__s1  glm__say.json  ok=True
+  or_llama__dial_norule_watched__lam1__n3__s1  glm__think.json  ok=True
+  or_llama__dial_norule_watched__lam1__n3__s1  glm__structured.json  ok=True
+  or_llama__dial__lam1__n3__s1  glm__do.json  ok=True
+  or_llama__dial_softrule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_llama__dial_softrule__lam1__n3__s1  glm__say.json  ok=True
+  or_llama__dial_norule_watched__lam1__n3__s1  glm__do.json  ok=True
+  or_llama__tacit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_gptoss__dial_norule__lam1__n3__s1  glm__structured.json  ok=True
+  or_llama__tacit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_llama__tacit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_llama__dial_softrule__lam1__n3__s1  glm__structured.json  ok=True
+  or_llama__dial_softrule__lam1__n3__s1  glm__do.json  ok=True
+  or_llama__tacit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_llama__honest__lam0__n3__s1  glm__say.json  ok=True
+  or_llama__dial_softrule__lam1__n3__s1  glm__think.json  ok=True
+  or_llama__tacit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_llama__explicit_collusion__lam1__n3__s1  glm__say.json  ok=True
+  or_llama__honest__lam0__n3__s1  glm__structured.json  ok=True
+  or_llama__explicit_collusion__lam1__n3__s1  glm__saydo.json  ok=True
+  or_llama__honest__lam0__n3__s1  glm__saydo.json  ok=True
+  or_llama__explicit_collusion__lam1__n3__s1  glm__think.json  ok=True
+  or_llama__explicit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+  or_llama__honest__lam0__n3__s1  glm__think.json  ok=True
+  or_llama__dial_norule__lam1__n3__s1  glm__say.json  ok=True
+  or_llama__dial_norule__lam1__n3__s1  glm__saydo.json  ok=True
+  or_llama__honest__lam0__n3__s1  glm__do.json  ok=True
+  or_llama__dial_norule__lam1__n3__s1  glm__think.json  ok=True
+  or_llama__explicit_collusion__lam1__n3__s1  glm__do.json  ok=True
+  or_llama__dial_norule__lam1__n3__s1  glm__do.json  ok=True
+  or_llama__dial_norule__lam1__n3__s1  glm__structured.json  ok=True
+  or_haiku__tacit_collusion__lam1__n3__s1  glm__structured.json  ok=True
+{
+  "qwen": {
+    "calls": 206,
+    "input_tokens": 184358,
+    "output_tokens": 465172,
+    "parse_failures": 13,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "glm": {
+    "calls": 184,
+    "input_tokens": 542374,
+    "output_tokens": 1420119,
+    "parse_failures": 8,
+    "api_errors": 1,
+    "estimated_usd": null
+  },
+  "_total_tokens": 2612023
+}

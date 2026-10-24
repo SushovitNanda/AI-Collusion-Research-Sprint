@@ -1,0 +1,23 @@
+=== robustness_dial: GLM agents, rule vs no-rule at lambda 1, seed 1  (2026-10-24T03:02:46+05:30) ===
+plan=robustness_dial model=glm runs=2 remaining=2 ~agent calls=216 (plus retries)
+  glm__dial__lam1__n3__s1  rounds=12  calls=108
+  glm__dial_norule__lam1__n3__s1  rounds=12  calls=108
+done  glm__dial__lam1__n3__s1
+done  glm__dial_norule__lam1__n3__s1
+{
+  "glm": {
+    "calls": 311,
+    "input_tokens": 353618,
+    "output_tokens": 1602646,
+    "parse_failures": 97,
+    "api_errors": 2,
+    "estimated_usd": null
+  },
+  "_total_tokens": 1956264
+}
+avg tokens/call: in=1137 out=5153; parse failures=97, api errors=2
+
+real	125m59.561s
+user	0m0.015s
+sys	0m0.000s
+exit=0

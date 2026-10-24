@@ -1,0 +1,35 @@
+=== extensions: norule_watched x3, softrule x3, norule sweeps+tail x2  (2026-10-24T03:21:27+05:30) ===
+plan=extensions model=qwen runs=8 remaining=8 ~agent calls=1,620 (plus retries)
+  qwen__dial_norule_watched__lam1__n3__s1  rounds=12  calls=108
+  qwen__dial_norule_watched__lam1__n3__s2  rounds=12  calls=108
+  qwen__dial_norule_watched__lam1__n3__s3  rounds=12  calls=108
+  qwen__dial_softrule__lam1__n3__s1  rounds=12  calls=108
+  qwen__dial_softrule__lam1__n3__s2  rounds=12  calls=108
+  qwen__dial_softrule__lam1__n3__s3  rounds=12  calls=108
+  qwen__dial_norule__updown0-0.25-0.5-1-tail12__n3__s1  rounds=54  calls=486
+  qwen__dial_norule__updown0-0.25-0.5-1-tail12__n3__s2  rounds=54  calls=486
+done  qwen__dial_norule_watched__lam1__n3__s3
+done  qwen__dial_norule_watched__lam1__n3__s2
+done  qwen__dial_softrule__lam1__n3__s2
+done  qwen__dial_softrule__lam1__n3__s1
+done  qwen__dial_norule_watched__lam1__n3__s1
+done  qwen__dial_softrule__lam1__n3__s3
+done  qwen__dial_norule__updown0-0.25-0.5-1-tail12__n3__s2
+done  qwen__dial_norule__updown0-0.25-0.5-1-tail12__n3__s1
+{
+  "qwen": {
+    "calls": 1699,
+    "input_tokens": 2192686,
+    "output_tokens": 1081745,
+    "parse_failures": 79,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "_total_tokens": 3274431
+}
+avg tokens/call: in=1291 out=637; parse failures=79, api errors=0
+
+real	23m51.152s
+user	0m0.015s
+sys	0m0.000s
+exit=0

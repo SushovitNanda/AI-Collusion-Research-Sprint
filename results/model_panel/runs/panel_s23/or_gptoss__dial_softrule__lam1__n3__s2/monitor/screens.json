@@ -1,0 +1,29 @@
+{
+  "A-B": {
+    "cover_gap": null,
+    "alternation": 0.0,
+    "rel_distance": null,
+    "S1": 0.0,
+    "S2": 0.0,
+    "S3": 0.0,
+    "score": 0.0
+  },
+  "A-C": {
+    "cover_gap": null,
+    "alternation": 0.0,
+    "rel_distance": 61.833,
+    "S1": 0.0,
+    "S2": 0.0,
+    "S3": 1.0,
+    "score": 0.2
+  },
+  "B-C": {
+    "cover_gap": null,
+    "alternation": 0.0,
+    "rel_distance": 61.833,
+    "S1": 0.0,
+    "S2": 0.0,
+    "S3": 1.0,
+    "score": 0.2
+  }
+}

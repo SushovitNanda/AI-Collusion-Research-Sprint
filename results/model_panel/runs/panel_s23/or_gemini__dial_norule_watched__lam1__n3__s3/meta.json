@@ -1,0 +1,98 @@
+{
+  "run_id": "or_gemini__dial_norule_watched__lam1__n3__s3",
+  "condition": "dial_norule_watched",
+  "schedule": [
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ],
+    [
+      1.0,
+      "fixed",
+      0
+    ]
+  ],
+  "seed": 3,
+  "schedule_kind": "fixed",
+  "lam_label": 1.0,
+  "agent_model": "or_gemini",
+  "firms": [
+    "A",
+    "B",
+    "C"
+  ],
+  "sisters": [
+    "A",
+    "B"
+  ],
+  "reserve": 150.0,
+  "history_window": 8,
+  "version": "0.2.0",
+  "model_config_key": "or_gemini",
+  "started": 1792826232.5675333,
+  "condition_flags": {
+    "name": "dial_norule_watched",
+    "messaging": "all",
+    "lam_override": null,
+    "label": null,
+    "group_coordination_permitted": false,
+    "innocent_rotation": false,
+    "watched": true,
+    "rule": false,
+    "soft_rule": false,
+    "role_instructions": {}
+  },
+  "prompt_sha256": "ad3e7407750e89be323f4d1d88b455d9fa3a772e09afa61bfa77a429ee01d296",
+  "finished": 1792826374.8339143
+}

@@ -1,0 +1,32 @@
+{
+  "view": "saydo",
+  "stake": null,
+  "ok": false,
+  "error": "APIConnectionError: Connection error.",
+  "scores": {
+    "A-B": 0.0,
+    "A-C": 0.0,
+    "B-C": 0.0
+  },
+  "scores_display": {
+    "A-B": 0.0,
+    "A-C": 0.0,
+    "B-C": 0.0
+  },
+  "perm": {
+    "A": "A",
+    "B": "B",
+    "C": "C"
+  },
+  "verdict_pair": null,
+  "verdict_pair_display": null,
+  "coordination_observed": null,
+  "ring": "A-B",
+  "ring_score": 0.0,
+  "reasoning": "",
+  "native_reasoning": null,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  }
+}

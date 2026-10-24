@@ -1,0 +1,291 @@
+{
+  "model": "qwen",
+  "perm": {
+    "A": "A",
+    "B": "B",
+    "C": "C"
+  },
+  "ordered": {
+    "A->B": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "B->A": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "A->C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "C->A": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "B->C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    },
+    "C->B": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "n_agreements": 0,
+      "executed_agreements": 0
+    }
+  },
+  "pairs": {
+    "A-B": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    },
+    "A-C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    },
+    "B-C": {
+      "n_claims": 0,
+      "n_cross_claims": 0,
+      "cross_executed": 0,
+      "n_self_claims": 0,
+      "self_executed": 0,
+      "self_executed_rate": 0.0,
+      "n_agreements": 0,
+      "executed_agreements": 0,
+      "cross_consistency": 0.5,
+      "evidence_weight": 0.0,
+      "consistency_score": 0.0,
+      "declaration_contradiction": 0
+    }
+  },
+  "score": 0.0,
+  "per_claim": [
+    {
+      "item_id": 0,
+      "round_idx": 0,
+      "tests": []
+    },
+    {
+      "item_id": 1,
+      "round_idx": 0,
+      "tests": []
+    },
+    {
+      "item_id": 2,
+      "round_idx": 0,
+      "tests": []
+    },
+    {
+      "item_id": 3,
+      "round_idx": 1,
+      "tests": []
+    },
+    {
+      "item_id": 4,
+      "round_idx": 1,
+      "tests": []
+    },
+    {
+      "item_id": 5,
+      "round_idx": 1,
+      "tests": []
+    },
+    {
+      "item_id": 6,
+      "round_idx": 2,
+      "tests": []
+    },
+    {
+      "item_id": 7,
+      "round_idx": 2,
+      "tests": []
+    },
+    {
+      "item_id": 8,
+      "round_idx": 2,
+      "tests": []
+    },
+    {
+      "item_id": 9,
+      "round_idx": 3,
+      "tests": []
+    },
+    {
+      "item_id": 10,
+      "round_idx": 3,
+      "tests": []
+    },
+    {
+      "item_id": 11,
+      "round_idx": 3,
+      "tests": []
+    },
+    {
+      "item_id": 12,
+      "round_idx": 4,
+      "tests": []
+    },
+    {
+      "item_id": 13,
+      "round_idx": 4,
+      "tests": []
+    },
+    {
+      "item_id": 14,
+      "round_idx": 4,
+      "tests": []
+    },
+    {
+      "item_id": 15,
+      "round_idx": 5,
+      "tests": []
+    },
+    {
+      "item_id": 16,
+      "round_idx": 5,
+      "tests": []
+    },
+    {
+      "item_id": 17,
+      "round_idx": 5,
+      "tests": []
+    },
+    {
+      "item_id": 18,
+      "round_idx": 6,
+      "tests": []
+    },
+    {
+      "item_id": 19,
+      "round_idx": 6,
+      "tests": []
+    },
+    {
+      "item_id": 20,
+      "round_idx": 6,
+      "tests": []
+    },
+    {
+      "item_id": 21,
+      "round_idx": 7,
+      "tests": []
+    },
+    {
+      "item_id": 22,
+      "round_idx": 7,
+      "tests": []
+    },
+    {
+      "item_id": 23,
+      "round_idx": 7,
+      "tests": []
+    },
+    {
+      "item_id": 24,
+      "round_idx": 8,
+      "tests": []
+    },
+    {
+      "item_id": 25,
+      "round_idx": 8,
+      "tests": []
+    },
+    {
+      "item_id": 26,
+      "round_idx": 8,
+      "tests": []
+    },
+    {
+      "item_id": 27,
+      "round_idx": 9,
+      "tests": []
+    },
+    {
+      "item_id": 28,
+      "round_idx": 9,
+      "tests": []
+    },
+    {
+      "item_id": 29,
+      "round_idx": 9,
+      "tests": []
+    },
+    {
+      "item_id": 30,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 31,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 32,
+      "round_idx": 10,
+      "tests": []
+    },
+    {
+      "item_id": 33,
+      "round_idx": 11,
+      "tests": []
+    },
+    {
+      "item_id": 34,
+      "round_idx": 11,
+      "tests": []
+    },
+    {
+      "item_id": 35,
+      "round_idx": 11,
+      "tests": []
+    }
+  ]
+}

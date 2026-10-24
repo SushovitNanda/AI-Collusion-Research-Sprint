@@ -1,0 +1,152 @@
+=== BLOCK 2c: monitors on both dial arms (judge=glm, extractor=qwen)  (2026-10-23T23:02:31+05:30) ===
+8 runs, judge=glm, extractor=qwen, views=say,do,saydo,structured,think
+  qwen__dial__lam0.25__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam1__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam0.5__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam0__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam0.25__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam1__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam0.5__n3__s2  claims__qwen.json  items=36 ok=True
+  qwen__dial__lam0.25__n3__s2  glm__say.json  ok=True
+  qwen__dial__lam1__n3__s1  glm__say.json  ok=True
+  qwen__dial__lam1__n3__s1  glm__think.json  ok=True
+  qwen__dial__lam0.5__n3__s1  glm__say.json  ok=True
+  qwen__dial__lam1__n3__s1  glm__structured.json  ok=True
+  qwen__dial__lam0.25__n3__s2  glm__saydo.json  ok=True
+  qwen__dial__lam0.25__n3__s2  glm__structured.json  ok=True
+  qwen__dial__lam0.5__n3__s1  glm__do.json  ok=True
+  qwen__dial__lam1__n3__s1  glm__do.json  ok=True
+  qwen__dial__lam0__n3__s2  glm__say.json  ok=True
+  qwen__dial__lam0.5__n3__s1  glm__saydo.json  ok=True
+  qwen__dial__lam0__n3__s2  glm__saydo.json  ok=True
+  qwen__dial__lam0.5__n3__s1  glm__think.json  ok=True
+  qwen__dial__lam0.25__n3__s2  glm__think.json  ok=True
+  qwen__dial__lam0.25__n3__s1  glm__say.json  ok=True
+  qwen__dial__lam0__n3__s2  glm__think.json  ok=True
+  qwen__dial__lam0.25__n3__s2  glm__do.json  ok=True
+  qwen__dial__lam0__n3__s2  glm__do.json  ok=True
+  qwen__dial__lam0__n3__s1  glm__say.json  ok=True
+  qwen__dial__lam0__n3__s2  glm__structured.json  ok=True
+  qwen__dial__lam0.25__n3__s1  glm__think.json  ok=True
+  qwen__dial__lam0__n3__s1  glm__saydo.json  ok=True
+  qwen__dial__lam0__n3__s1  glm__think.json  ok=True
+  qwen__dial__lam1__n3__s2  glm__say.json  ok=True
+  qwen__dial__lam0.25__n3__s1  glm__saydo.json  ok=True
+  qwen__dial__lam1__n3__s2  glm__saydo.json  ok=True
+  qwen__dial__lam0__n3__s1  glm__structured.json  ok=True
+  qwen__dial__lam1__n3__s2  glm__think.json  ok=True
+  qwen__dial__lam1__n3__s2  glm__structured.json  ok=True
+  qwen__dial__lam0.5__n3__s2  glm__say.json  ok=True
+  qwen__dial__lam0.5__n3__s2  glm__saydo.json  ok=True
+  qwen__dial__lam0.25__n3__s1  glm__structured.json  ok=True
+  qwen__dial__lam1__n3__s2  glm__do.json  ok=True
+  qwen__dial__lam0.5__n3__s2  glm__think.json  ok=True
+  qwen__dial__lam0.5__n3__s2  glm__do.json  ok=True
+  qwen__dial__lam0__n3__s1  glm__do.json  ok=True
+  qwen__dial__lam0.5__n3__s2  glm__structured.json  ok=True
+  qwen__dial__lam1__n3__s1  glm__saydo.json  ok=True
+  qwen__dial__lam0.25__n3__s1  glm__do.json  ok=True
+  qwen__dial__lam0.5__n3__s1  glm__structured.json  ok=True
+{
+  "qwen": {
+    "calls": 32,
+    "input_tokens": 25612,
+    "output_tokens": 48447,
+    "parse_failures": 0,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "glm": {
+    "calls": 44,
+    "input_tokens": 95648,
+    "output_tokens": 279264,
+    "parse_failures": 1,
+    "api_errors": 3,
+    "estimated_usd": null
+  },
+  "_total_tokens": 448971
+}
+
+real	16m8.469s
+user	0m0.000s
+sys	0m0.015s
+6 runs, judge=glm, extractor=qwen, views=say,do,saydo,structured,think
+  qwen__dial_norule__lam0__n3__s1  claims__qwen.json  items=36 ok=True
+  qwen__dial_norule__lam0__n3__s2  claims__qwen.json  items=39 ok=True
+  qwen__dial_norule__lam0__n3__s1  glm__say.json  ok=True
+  qwen__dial_norule__lam1__n3__s1  claims__qwen.json  items=39 ok=True
+  qwen__dial_norule__lam0__n3__s1  glm__think.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s1  claims__qwen.json  items=54 ok=True
+  qwen__dial_norule__lam0__n3__s1  glm__saydo.json  ok=True
+  qwen__dial_norule__lam0__n3__s2  glm__say.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s2  claims__qwen.json  items=60 ok=True
+  qwen__dial_norule__lam1__n3__s1  glm__say.json  ok=True
+  qwen__dial_norule__lam0__n3__s1  glm__structured.json  ok=True
+  qwen__dial_norule__lam1__n3__s2  claims__qwen.json  items=66 ok=True
+  qwen__dial_norule__lam0__n3__s2  glm__think.json  ok=True
+  qwen__dial_norule__lam0__n3__s2  glm__do.json  ok=True
+  qwen__dial_norule__lam1__n3__s1  glm__saydo.json  ok=True
+  qwen__dial_norule__lam0__n3__s1  glm__do.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s1  glm__say.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s1  glm__saydo.json  ok=True
+  qwen__dial_norule__lam1__n3__s1  glm__think.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s1  glm__think.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s2  glm__say.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s2  glm__saydo.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s2  glm__structured.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s1  glm__structured.json  ok=True
+  qwen__dial_norule__lam1__n3__s1  glm__structured.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s2  glm__think.json  ok=True
+  qwen__dial_norule__lam1__n3__s2  glm__say.json  ok=True
+  qwen__dial_norule__lam1__n3__s2  glm__saydo.json  ok=True
+  qwen__dial_norule__lam0__n3__s2  glm__saydo.json  ok=True
+  qwen__dial_norule__lam1__n3__s2  glm__think.json  ok=True
+  qwen__dial_norule__lam0__n3__s2  glm__structured.json  ok=True
+  qwen__dial_norule__lam1__n3__s2  glm__do.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s1  glm__do.json  ok=True
+  qwen__dial_norule__lam0.5__n3__s2  glm__do.json  ok=True
+  qwen__dial_norule__lam1__n3__s2  glm__structured.json  ok=True
+  qwen__dial_norule__lam1__n3__s1  glm__do.json  ok=False
+{
+  "qwen": {
+    "calls": 32,
+    "input_tokens": 30321,
+    "output_tokens": 73540,
+    "parse_failures": 1,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "glm": {
+    "calls": 32,
+    "input_tokens": 92756,
+    "output_tokens": 195729,
+    "parse_failures": 1,
+    "api_errors": 2,
+    "estimated_usd": null
+  },
+  "_total_tokens": 392346
+}
+
+real	26m45.606s
+user	0m0.031s
+sys	0m0.000s
+8 runs, judge=glm, extractor=qwen, claims only
+  qwen__dial_norule__updown0-0.25-0.5-1__n3__s2  claims__qwen.json  items=199 ok=True
+  qwen__dial_norule__updown0-0.25-0.5-1__n3__s1  claims__qwen.json  items=210 ok=True
+{
+  "qwen": {
+    "calls": 41,
+    "input_tokens": 40183,
+    "output_tokens": 101178,
+    "parse_failures": 0,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "_total_tokens": 141361
+}
+
+real	2m2.643s
+user	0m0.000s
+sys	0m0.015s
+exit=0

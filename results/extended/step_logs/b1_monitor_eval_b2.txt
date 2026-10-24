@@ -1,0 +1,10 @@
+=== monitors eval_b2 (judge glm, extractor qwen)  (2026-10-24T05:08:46+05:30) ===
+24 runs, judge=glm, extractor=qwen, views=say,do,saydo,structured,think
+{
+  "_total_tokens": 0
+}
+
+real	0m1.336s
+user	0m0.000s
+sys	0m0.000s
+exit=0

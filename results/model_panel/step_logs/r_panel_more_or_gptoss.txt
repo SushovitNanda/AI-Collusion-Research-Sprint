@@ -1,0 +1,1 @@
+plan=panel_more model=or_gptoss runs=8 remaining=0 ~agent calls=0 (plus retries)

@@ -1,0 +1,97 @@
+{
+  "run_id": "qwen__honest_nomsg__lam0__n3__s1",
+  "condition": "honest_nomsg",
+  "schedule": [
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ],
+    [
+      0.0,
+      "fixed",
+      0
+    ]
+  ],
+  "seed": 1,
+  "schedule_kind": "fixed",
+  "lam_label": 0.0,
+  "agent_model": "qwen",
+  "firms": [
+    "A",
+    "B",
+    "C"
+  ],
+  "sisters": [
+    "A",
+    "B"
+  ],
+  "reserve": 150.0,
+  "history_window": 8,
+  "version": "0.2.0",
+  "model_config_key": "qwen",
+  "started": 1792772075.182909,
+  "condition_flags": {
+    "name": "honest_nomsg",
+    "messaging": "none",
+    "lam_override": 0.0,
+    "label": 0,
+    "group_coordination_permitted": false,
+    "innocent_rotation": false,
+    "watched": false,
+    "rule": true,
+    "role_instructions": {}
+  },
+  "prompt_sha256": "fdc340cbc3a7a68a738e351b36d5a8998f702f7498cd0be51dfff43f2bdcff6d",
+  "finished": 1792772218.837537
+}

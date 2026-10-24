@@ -1,0 +1,12 @@
+wrote Openrouter_models\smoke\or_deepseek__explicit_collusion__lam1__n3__s1
+{
+  "or_deepseek": {
+    "calls": 18,
+    "input_tokens": 15811,
+    "output_tokens": 868,
+    "parse_failures": 0,
+    "api_errors": 0,
+    "estimated_usd": 0.0016
+  },
+  "_total_tokens": 16679
+}

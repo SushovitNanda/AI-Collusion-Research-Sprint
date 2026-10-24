@@ -1,0 +1,1 @@
+plan=panel model=or_gemini runs=7 remaining=0 ~agent calls=0 (plus retries)

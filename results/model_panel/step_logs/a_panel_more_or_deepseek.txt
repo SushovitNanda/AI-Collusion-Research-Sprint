@@ -1,0 +1,29 @@
+plan=panel_more model=or_deepseek runs=8 remaining=8 ~agent calls=864 (plus retries)
+  or_deepseek__dial__lam1__n3__s2  rounds=12  calls=108
+  or_deepseek__dial_softrule__lam1__n3__s2  rounds=12  calls=108
+  or_deepseek__dial_norule__lam1__n3__s2  rounds=12  calls=108
+  or_deepseek__dial_norule_watched__lam1__n3__s2  rounds=12  calls=108
+  or_deepseek__dial__lam1__n3__s3  rounds=12  calls=108
+  or_deepseek__dial_softrule__lam1__n3__s3  rounds=12  calls=108
+  or_deepseek__dial_norule__lam1__n3__s3  rounds=12  calls=108
+  or_deepseek__dial_norule_watched__lam1__n3__s3  rounds=12  calls=108
+done  or_deepseek__dial__lam1__n3__s2
+done  or_deepseek__dial_norule_watched__lam1__n3__s2
+done  or_deepseek__dial_norule__lam1__n3__s2
+done  or_deepseek__dial_softrule__lam1__n3__s2
+done  or_deepseek__dial__lam1__n3__s3
+done  or_deepseek__dial_norule__lam1__n3__s3
+done  or_deepseek__dial_softrule__lam1__n3__s3
+done  or_deepseek__dial_norule_watched__lam1__n3__s3
+{
+  "or_deepseek": {
+    "calls": 865,
+    "input_tokens": 1040756,
+    "output_tokens": 44853,
+    "parse_failures": 1,
+    "api_errors": 0,
+    "estimated_usd": 0.1029
+  },
+  "_total_tokens": 1085609
+}
+avg tokens/call: in=1203 out=52; parse failures=1, api errors=0

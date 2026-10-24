@@ -1,0 +1,289 @@
+% ---------------------------------------------------------------------------
+% references.bib -- each entry is preceded by a note saying why it was chosen
+% and what it is cited for. Lines outside entries are ignored by BibTeX (an at-sign anywhere, even in a comment, starts an entry).
+% All entries were verified against their source (arXiv abstract page, journal
+% page or publisher) on 24 Oct 2026; replace or add freely.
+% ---------------------------------------------------------------------------
+
+% WHY: the sprint page itself: Track 2 questions Q2.1-Q2.3, the suggested
+% weekend project, judging criteria and resources. Cited in the Introduction
+% for the research questions and the "harm without agreement" framing.
+@misc{apart2026sprint,
+  title        = {{AI Collusion Research Sprint (23--25 October 2026): Track 2, Detection and Audit of Collusion}},
+  author       = {{Apart Research}},
+  year         = {2026},
+  howpublished = {\url{https://apartresearch.com/sprints/ai-collusion-research-sprint-2026-10-23-to-2026-10-25}}
+}
+
+% WHY: the Track 2.2 starter paper. We reuse its three-stage protocol
+% (private plan -> public announcement -> action) and adapt its deception
+% typology; also cited for "private plans are self-reports" in Limitations.
+@misc{shi2026lie,
+  title         = {When Agents Lie: Premeditation, Persistence, and Exploitation in Repeated Games},
+  author        = {Shi, Jerick and Zhang, Terry Jingcheng and Sch{\"o}lkopf, Bernhard and Conitzer, Vincent and Jin, Zhijing},
+  year          = {2026},
+  eprint        = {2607.05132},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2607.05132}
+}
+
+% WHY: the Track 2.2 monitoring resource. Our structured view adapts its
+% multi-dimension rubric with the composite computed in code, and its post-hoc
+% rescoring of saved logs. Cited in Related Work and Methods 3.3.
+@misc{nguyen2026traceguard,
+  title         = {TraceGuard: Structured Multi-Dimensional Monitoring as a Collusion-Resistant Control Protocol},
+  author        = {Nguyen, Khanh Linh and Nghiem, Hoa and Tran, Tu},
+  year          = {2026},
+  eprint        = {2604.03968},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2604.03968}
+}
+
+% WHY: the Track 2.1 resource (instructed coalitions in cooperative tasks,
+% coalition-advantage metrics). Cited to contrast instructed vs emergent
+% collusion and as a target setting for future work.
+@misc{nakamura2026colosseum,
+  title         = {Colosseum: Auditing Collusion in Cooperative Multi-Agent Systems},
+  author        = {Nakamura, Mason and Kumar, Abhinav and Das, Saswat and Abdelnabi, Sahar and Mahmud, Saaduddin and Fioretto, Ferdinando and Zilberstein, Shlomo and Bagdasarian, Eugene},
+  year          = {2026},
+  eprint        = {2602.15198},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2602.15198}
+}
+
+% WHY: closest prior work on collusion that EMERGES (not instructed) over a
+% long horizon between LLM agents; cited in Related Work to position our
+% incentive-dial study.
+@misc{shi2026emergent,
+  title         = {Emergent Collusion in Long-Horizon {LLM} Agent Interaction},
+  author        = {Shi, Xinrui and Zhang, Yanzhe and Yang, Diyi},
+  year          = {2026},
+  eprint        = {2609.24967},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2609.24967}
+}
+
+% WHY: LLM pricing agents reach supracompetitive prices and prompt wording
+% matters; cited in Related Work and as support for our finding that one
+% sentence of the prompt decides whether a cartel forms.
+@misc{fish2024algorithmic,
+  title         = {Algorithmic Collusion by Large Language Models},
+  author        = {Fish, Sara and Gonczarowski, Yannai A. and Shorrer, Ran I.},
+  year          = {2024},
+  eprint        = {2404.00806},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2404.00806}
+}
+
+% WHY: LLM sellers in double auctions; communication and oversight pressure
+% change collusive tendencies. Cited in Related Work (auction setting; effect
+% of oversight, which our surveillance-notice condition echoes).
+@misc{agrawal2025double,
+  title         = {Evaluating {LLM} Agent Collusion in Double Auctions},
+  author        = {Agrawal, Kushal and Teo, Verona and Vazquez, Juan J. and Kunnavakkam, Sudarsh and Srikanth, Vishak and Liu, Andy},
+  year          = {2025},
+  eprint        = {2507.01413},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2507.01413}
+}
+
+% WHY: the pre-LLM result that learning algorithms collude without
+% communicating (Q-learning pricing). Cited in Related Work to contrast tacit
+% algorithmic collusion with the explicit, message-based cartels we observe.
+@article{calvano2020artificial,
+  title   = {Artificial Intelligence, Algorithmic Pricing, and Collusion},
+  author  = {Calvano, Emilio and Calzolari, Giacomo and Denicol{\`o}, Vincenzo and Pastorello, Sergio},
+  journal = {American Economic Review},
+  volume  = {110},
+  number  = {10},
+  pages   = {3267--3297},
+  year    = {2020},
+  doi     = {10.1257/aer.20190623}
+}
+
+% WHY: steganographic (hidden) collusion between generative agents and the
+% limits of monitoring/paraphrasing as countermeasures. Cited in Discussion /
+% Future Work for the risk that watched rings move coordination into bids.
+@misc{motwani2024secret,
+  title         = {Secret Collusion among {AI} Agents: Multi-Agent Deception via Steganography},
+  author        = {Motwani, Sumeet Ramesh and Baranchuk, Mikhail and Strohmeier, Martin and Bolina, Vijay and Torr, Philip H. S. and Hammond, Lewis and Schroeder de Witt, Christian},
+  year          = {2024},
+  eprint        = {2402.07510},
+  archivePrefix = {arXiv},
+  note          = {NeurIPS 2024},
+  url           = {https://arxiv.org/abs/2402.07510}
+}
+
+% WHY: the AI-control framing (monitoring an untrusted model with a trusted
+% one; protocols that must survive intentional subversion). Cited in Methods
+% for why the judge is a different model family from the agents and for the
+% judge-with-a-stake extension.
+@misc{greenblatt2023control,
+  title         = {{AI} Control: Improving Safety Despite Intentional Subversion},
+  author        = {Greenblatt, Ryan and Shlegeris, Buck and Sachan, Kshitij and Roger, Fabien},
+  year          = {2023},
+  eprint        = {2312.06942},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2312.06942}
+}
+
+% WHY: taxonomy of multi-agent risks naming collusion as one of three failure
+% modes; cited in the Introduction for why monitoring collusion matters for
+% AI safety.
+@misc{hammond2025multiagent,
+  title         = {Multi-Agent Risks from Advanced {AI}},
+  author        = {Hammond, Lewis and others},
+  year          = {2025},
+  eprint        = {2502.14143},
+  archivePrefix = {arXiv},
+  note          = {Cooperative AI Foundation Technical Report \#1},
+  url           = {https://arxiv.org/abs/2502.14143}
+}
+
+% WHY: survey of AI deception (saying one thing, doing another); cited in the
+% Introduction for the say-do gap as a safety concern.
+@article{park2024deception,
+  title   = {{AI} Deception: A Survey of Examples, Risks, and Potential Solutions},
+  author  = {Park, Peter S. and Goldstein, Simon and O'Gara, Aidan and Chen, Michael and Hendrycks, Dan},
+  journal = {Patterns},
+  volume  = {5},
+  number  = {5},
+  pages   = {100988},
+  year    = {2024},
+  doi     = {10.1016/j.patter.2024.100988}
+}
+
+% WHY: LLM-as-a-judge evaluation and its known biases; cited in Methods 3.3
+% where an LLM judge scores the views, and in Limitations.
+@misc{zheng2023judging,
+  title         = {Judging {LLM}-as-a-Judge with {MT}-Bench and Chatbot Arena},
+  author        = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and Zhang, Hao and Gonzalez, Joseph E. and Stoica, Ion},
+  year          = {2023},
+  eprint        = {2306.05685},
+  archivePrefix = {arXiv},
+  note          = {NeurIPS 2023 Datasets and Benchmarks},
+  url           = {https://arxiv.org/abs/2306.05685}
+}
+
+% WHY: the legal doctrine of "plus factors": parallel conduct becomes
+% evidence of agreement only with additional facts (communication, action
+% against self-interest). Cited for Q2.3 and the case-type design.
+@article{kovacic2011plus,
+  title   = {Plus Factors and Agreement in Antitrust Law},
+  author  = {Kovacic, William E. and Marshall, Robert C. and Marx, Leslie M. and White, Halbert L.},
+  journal = {Michigan Law Review},
+  volume  = {110},
+  number  = {3},
+  pages   = {393--436},
+  year    = {2011},
+  url     = {https://repository.law.umich.edu/mlr/vol110/iss3/1}
+}
+
+% WHY: the economics of bidding rings (cover bids, bid rotation, how rings
+% allocate wins); cited in the Introduction for the definitions of cover bid
+% and bid rotation.
+@book{marshall2012economics,
+  title     = {The Economics of Collusion: Cartels and Bidding Rings},
+  author    = {Marshall, Robert C. and Marx, Leslie M.},
+  publisher = {MIT Press},
+  year      = {2012}
+}
+
+% WHY: the classic econometric detection of bid rigging in procurement
+% auctions (highway contracts); cited for the bid screens (Methods 3.3).
+@article{porter1993detection,
+  title   = {Detection of Bid Rigging in Procurement Auctions},
+  author  = {Porter, Robert H. and Zona, J. Douglas},
+  journal = {Journal of Political Economy},
+  volume  = {101},
+  number  = {3},
+  pages   = {518--538},
+  year    = {1993}
+}
+
+% WHY: tests that distinguish competition from collusion in procurement bids
+% (conditional independence and exchangeability of bids); cited for the
+% screens and for the "innocent parallel" case type.
+@article{bajari2003deciding,
+  title   = {Deciding Between Competition and Collusion},
+  author  = {Bajari, Patrick and Ye, Lixin},
+  journal = {The Review of Economics and Statistics},
+  volume  = {85},
+  number  = {4},
+  pages   = {971--989},
+  year    = {2003}
+}
+
+% WHY: survey of cartel-detection screens (behavioural vs structural);
+% cited for the screens and for the limits of bid-only detection.
+@incollection{harrington2008detecting,
+  title     = {Detecting Cartels},
+  author    = {Harrington, Joseph E.},
+  booktitle = {Handbook of Antitrust Economics},
+  editor    = {Buccirossi, Paolo},
+  publisher = {MIT Press},
+  year      = {2008}
+}
+
+% WHY: the variance screen for collusion (low price variance as a cartel
+% marker); cited for the screens family of features.
+@article{abrantesmetz2006variance,
+  title   = {A Variance Screen for Collusion},
+  author  = {Abrantes-Metz, Rosa M. and Froeb, Luke M. and Geweke, John and Taylor, Christopher T.},
+  journal = {International Journal of Industrial Organization},
+  volume  = {24},
+  number  = {3},
+  pages   = {467--486},
+  year    = {2006}
+}
+
+% WHY: the Youden index, used to pick each monitor's frozen threshold
+% (maximises true-positive rate minus false-positive rate).
+@article{youden1950index,
+  title   = {Index for Rating Diagnostic Tests},
+  author  = {Youden, W. J.},
+  journal = {Cancer},
+  volume  = {3},
+  number  = {1},
+  pages   = {32--35},
+  year    = {1950}
+}
+
+% WHY: the Wilson score interval, used for the confidence intervals on
+% accuracy, recall and false-positive rate.
+@article{wilson1927probable,
+  title   = {Probable Inference, the Law of Succession, and Statistical Inference},
+  author  = {Wilson, Edwin B.},
+  journal = {Journal of the American Statistical Association},
+  volume  = {22},
+  number  = {158},
+  pages   = {209--212},
+  year    = {1927}
+}
+
+% WHY: the bootstrap, used for AUROC confidence intervals and the paired
+% bootstrap of the combined-vs-single-channel difference.
+@book{efron1993bootstrap,
+  title     = {An Introduction to the Bootstrap},
+  author    = {Efron, Bradley and Tibshirani, Robert J.},
+  publisher = {Chapman \& Hall},
+  year      = {1993}
+}
+
+% WHY: code repository of "When Agents Lie" (Track 2.2 resource); cited in
+% Code and Data to state that ideas, not code, were reused from it.
+@misc{llmtrustbreaking2026code,
+  title        = {{LLM-Trust-Breaking: code for ``When Agents Lie''}},
+  author       = {Shi, Jerick},
+  year         = {2026},
+  howpublished = {\url{https://github.com/Jerick-1380/LLM-Trust-Breaking}}
+}
+
+% WHY: code repository of TraceGuard (Track 2.2 resource); cited in Code and
+% Data to state that ideas, not code, were reused from it.
+@misc{traceguard2026code,
+  title        = {{TraceGuard} (code repository)},
+  author       = {Nguyen, Khanh Linh},
+  year         = {2026},
+  howpublished = {\url{https://github.com/linhkid/TraceGuard}}
+}

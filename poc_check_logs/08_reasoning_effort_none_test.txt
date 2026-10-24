@@ -1,4 +1,0 @@
-reasoning_effort=none (extra_body), max_tokens=400: valid=0/4  reasoning_chars=[1706, 1998, 1635, 1735]  out_tokens=[400, 400, 400, 400]
-reasoning_effort=none (extra_body), max_tokens=3000: valid=2/4  reasoning_chars=[10202, 6312, 3885, 10669]  out_tokens=[3000, 1629, 1055, 3000]
-reasoning_effort=none + reasoning.enabled=false, 400: valid=0/4  reasoning_chars=[1865, 1764, 1754, 1678]  out_tokens=[400, 400, 400, 400]
-TOTAL tokens this test: input=5544 output=11884

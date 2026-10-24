@@ -1,0 +1,35 @@
+=== BLOCK 2b: grid --plan dial_norule (seeds 1,2, fixed + sweeps)  (2026-10-23T22:36:00+05:30) ===
+plan=dial_norule model=qwen runs=8 remaining=8 ~agent calls=1,404 (plus retries)
+  qwen__dial_norule__lam0__n3__s1  rounds=12  calls=108
+  qwen__dial_norule__lam0.5__n3__s1  rounds=12  calls=108
+  qwen__dial_norule__lam1__n3__s1  rounds=12  calls=108
+  qwen__dial_norule__lam0__n3__s2  rounds=12  calls=108
+  qwen__dial_norule__lam0.5__n3__s2  rounds=12  calls=108
+  qwen__dial_norule__lam1__n3__s2  rounds=12  calls=108
+  qwen__dial_norule__updown0-0.25-0.5-1__n3__s1  rounds=42  calls=378
+  qwen__dial_norule__updown0-0.25-0.5-1__n3__s2  rounds=42  calls=378
+done  qwen__dial_norule__lam0__n3__s2
+done  qwen__dial_norule__lam1__n3__s1
+done  qwen__dial_norule__lam0__n3__s1
+done  qwen__dial_norule__lam0.5__n3__s1
+done  qwen__dial_norule__lam0.5__n3__s2
+done  qwen__dial_norule__lam1__n3__s2
+done  qwen__dial_norule__updown0-0.25-0.5-1__n3__s2
+done  qwen__dial_norule__updown0-0.25-0.5-1__n3__s1
+{
+  "qwen": {
+    "calls": 1503,
+    "input_tokens": 1883911,
+    "output_tokens": 977016,
+    "parse_failures": 99,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "_total_tokens": 2860927
+}
+avg tokens/call: in=1253 out=650; parse failures=99, api errors=0
+
+real	26m30.817s
+user	0m0.000s
+sys	0m0.015s
+exit=0

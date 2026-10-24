@@ -1,0 +1,17 @@
+[
+  {
+    "plan": "extensions",
+    "model": "qwen",
+    "usage": {
+      "qwen": {
+        "calls": 1699,
+        "input_tokens": 2192686,
+        "output_tokens": 1081745,
+        "parse_failures": 79,
+        "api_errors": 0,
+        "estimated_usd": null
+      },
+      "_total_tokens": 3274431
+    }
+  }
+]

@@ -1,0 +1,67 @@
+=== BLOCK 1a: grid --plan eval --model qwen (24 runs)  (2026-10-23T21:29:03+05:30) ===
+plan=eval model=qwen runs=24 remaining=24 ~agent calls=2,268 (plus retries)
+  qwen__explicit_collusion__lam1__n3__s1  rounds=12  calls=108
+  qwen__explicit_collusion__lam1__n3__s2  rounds=12  calls=108
+  qwen__explicit_collusion__lam1__n3__s3  rounds=12  calls=108
+  qwen__explicit_collusion__lam1__n3__s4  rounds=12  calls=108
+  qwen__explicit_collusion__lam1__n3__s5  rounds=12  calls=108
+  qwen__explicit_collusion__lam1__n3__s6  rounds=12  calls=108
+  qwen__tacit_collusion__lam1__n3__s1  rounds=12  calls=72
+  qwen__tacit_collusion__lam1__n3__s2  rounds=12  calls=72
+  qwen__tacit_collusion__lam1__n3__s3  rounds=12  calls=72
+  qwen__tacit_collusion__lam1__n3__s4  rounds=12  calls=72
+  qwen__tacit_collusion__lam1__n3__s5  rounds=12  calls=72
+  qwen__tacit_collusion__lam1__n3__s6  rounds=12  calls=72
+  qwen__cheap_talk__lam0__n3__s1  rounds=12  calls=108
+  qwen__cheap_talk__lam0__n3__s2  rounds=12  calls=108
+  qwen__cheap_talk__lam0__n3__s3  rounds=12  calls=108
+  qwen__innocent_parallel__lam0__n3__s1  rounds=12  calls=108
+  qwen__innocent_parallel__lam0__n3__s2  rounds=12  calls=108
+  qwen__innocent_parallel__lam0__n3__s3  rounds=12  calls=108
+  qwen__honest__lam0__n3__s1  rounds=12  calls=108
+  qwen__honest__lam0__n3__s2  rounds=12  calls=108
+  qwen__honest__lam0__n3__s3  rounds=12  calls=108
+  qwen__honest_nomsg__lam0__n3__s1  rounds=12  calls=72
+  qwen__honest_nomsg__lam0__n3__s2  rounds=12  calls=72
+  qwen__honest_nomsg__lam0__n3__s3  rounds=12  calls=72
+done  qwen__explicit_collusion__lam1__n3__s2
+done  qwen__explicit_collusion__lam1__n3__s3
+done  qwen__explicit_collusion__lam1__n3__s5
+done  qwen__explicit_collusion__lam1__n3__s4
+done  qwen__explicit_collusion__lam1__n3__s1
+done  qwen__tacit_collusion__lam1__n3__s2
+done  qwen__tacit_collusion__lam1__n3__s1
+done  qwen__tacit_collusion__lam1__n3__s3
+done  qwen__tacit_collusion__lam1__n3__s4
+done  qwen__explicit_collusion__lam1__n3__s6
+done  qwen__tacit_collusion__lam1__n3__s6
+done  qwen__tacit_collusion__lam1__n3__s5
+done  qwen__cheap_talk__lam0__n3__s1
+done  qwen__cheap_talk__lam0__n3__s2
+done  qwen__cheap_talk__lam0__n3__s3
+done  qwen__innocent_parallel__lam0__n3__s2
+done  qwen__innocent_parallel__lam0__n3__s1
+done  qwen__innocent_parallel__lam0__n3__s3
+done  qwen__honest_nomsg__lam0__n3__s1
+done  qwen__honest__lam0__n3__s1
+done  qwen__honest__lam0__n3__s2
+done  qwen__honest_nomsg__lam0__n3__s2
+done  qwen__honest__lam0__n3__s3
+done  qwen__honest_nomsg__lam0__n3__s3
+{
+  "qwen": {
+    "calls": 2279,
+    "input_tokens": 2480886,
+    "output_tokens": 1169771,
+    "parse_failures": 11,
+    "api_errors": 0,
+    "estimated_usd": null
+  },
+  "_total_tokens": 3650657
+}
+avg tokens/call: in=1089 out=513; parse failures=11, api errors=0
+
+real	20m28.632s
+user	0m0.031s
+sys	0m0.015s
+exit=0

@@ -28,15 +28,17 @@ async def main_async(key, config):
     r1 = await m.complete([{"role": "user", "content": "Extract the name, age, and city: Ada, 36, London."}],
                           "person_info", TINY, max_tokens=200)
     print("tiny  :", r1["data"], "| error:", r1["error"])
-    cond = CONDITIONS["dial_channel"]
+    cond = CONDITIONS["dial"]
+    firms = FIRMS[:3]
     ctx = dict(firm="A", sister="B", round=0, cost=78.4, lam=0.5, prev_lam=0.0,
-               policy_changed=False, total_score=0.0, history=[], window=8, channel=True,
+               policy_changed=False, total_score=0.0, history=[], window=8, messaging="all",
                chat_history=[], last_notes="")
-    r2 = await m.complete([{"role": "system", "content": P.firm_system_prompt("A", FIRMS, SISTERS, cond, 150)},
+    r2 = await m.complete([{"role": "system", "content": P.firm_system_prompt("A", firms, SISTERS, cond, 150)},
                            {"role": "user", "content": P.think_prompt(ctx)}],
                           "plan", P.THINK_SCHEMA, meta=dict(run_id="smoke", firm="A", sister="B",
-                          is_sister=True, sisters=SISTERS, round=0, lam=0.5, cost=78.4,
-                          reserve=150, condition="dial_channel", positive_control=False),
+                          is_sister=True, sisters=SISTERS, firms=firms, round=0, lam=0.5, cost=78.4,
+                          reserve=150, condition="dial", label=None, messaging="all",
+                          instructed=False),
                           max_tokens=400)
     print("plan  :", r2["data"], "| error:", r2["error"])
     print("native reasoning returned:", bool(r2["reasoning"]))
@@ -45,7 +47,7 @@ async def main_async(key, config):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="glm")
+    ap.add_argument("--model", default="qwen")
     ap.add_argument("--config", default=None)
     a = ap.parse_args()
     asyncio.run(main_async(a.model, a.config))
